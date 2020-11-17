@@ -9,21 +9,21 @@ import java.util.ArrayList;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import logica.Cliente;
+import logica.Centro;
 
-public class ClientesJSON {
-	private ArrayList<Cliente> clientes;
+public class CentrosJSON {
+	private ArrayList<Centro> centros;
 
-	public ClientesJSON() {
-		clientes = new ArrayList<Cliente>();
+	public CentrosJSON() {
+		centros = new ArrayList<Centro>();
 	}
 
-	public void addCliente(Cliente cliente) {
-		clientes.add(cliente);
+	public void addCentro(Centro centro) {
+		centros.add(centro);
 	}
 
 	public int tamanio() {
-		return clientes.size();
+		return centros.size();
 	}
 
 	public String generarJSONBasico() {
@@ -51,29 +51,30 @@ public class ClientesJSON {
 		}
 	}
 
-	public static ClientesJSON leerJSON(String archivo) {
+	public static CentrosJSON leerJSON(String archivo) {
 		Gson gson = new Gson();
-		ClientesJSON ret = null;
+		CentrosJSON ret = null;
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(archivo));
-			ret = gson.fromJson(br, ClientesJSON.class);
+			ret = gson.fromJson(br, CentrosJSON.class);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return ret;
 	}
 	
-	public ArrayList<String> getClientesString (){
+	public ArrayList<String> getCentrosString (){
 		ArrayList<String> ret = new ArrayList<String>();
-		for (int i = 0; i < this.clientes.size(); i++) {
-			ret.add(clientes.get(i).toString());
+		for (int i = 0; i < this.centros.size(); i++) {
+			ret.add(centros.get(i).toString());
 		}
 		return ret;
 	}
-	public ArrayList<Cliente> getClientes () {
-		return clientes;
+	public ArrayList<Centro> getCentros () {
+		return centros;
 	}
 }
+
 
 
 

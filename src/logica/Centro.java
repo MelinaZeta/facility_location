@@ -1,9 +1,9 @@
 package logica;
 
-public class CentroDistribucion {
+public class Centro {
 	private Ubicacion ubicacion;
 	
-	public CentroDistribucion(Ubicacion ubi) {
+	public Centro(Ubicacion ubi) {
 		this.ubicacion = ubi;	
 	}
 

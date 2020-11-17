@@ -107,30 +107,13 @@ import java.util.Set;
 			return vertices.get(i).distancia(vertices.get(j));
 		}
 
-//		public boolean sonPesosIguales() {
-//			int[][] pesos = calcularPesos();
-//			int pesoActual = obtenerPrimerPositivo(pesos);
-//
-//			for (int i = 0; i < pesos.length - 1; i++) {
-//				for (int j = i + 1; j < pesos.length; j++) {
-//					if (pesos[i][j] != -1 && pesos[i][j] != pesoActual) {
-//						return false;
-//					}
-//				}
-//			}
-//			return true;
-//		}
+		public ArrayList<Ubicacion> getClientes() {
+			return clientes;
+		}
 
-//		public int obtenerPrimerPositivo(int[][] pesos) {
-//			for (int i = 0; i < pesos.length - 1; i++) {
-//				for (int j = i + 1; j < pesos.length; j++) {
-//					if (pesos[i][j] != -1) {
-//						return pesos[i][j];
-//					}
-//				}
-//			}
-//			return -1;
-//		}
+		public ArrayList<Ubicacion> getCentros() {
+			return centros;
+		}
 
 		public void completarGrafo() {
 			if (tamanio() < 2)

@@ -7,7 +7,7 @@ public class Cliente {
 		this.ubicacion = ubi;
 	}
 	
-	public double distanciaCentro (CentroDistribucion centro) {
+	public double distanciaCentro (Centro centro) {
 		double distancia = ubicacion.distancia(centro.getUbicacion());
 		return distancia;
 	}

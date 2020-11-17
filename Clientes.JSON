@@ -1,0 +1,10 @@
+{
+  "clientes": [
+    {
+      "ubicacion": {
+        "latitud": 40.0,
+        "longitud": 40.0
+      }
+    }
+  ]
+}

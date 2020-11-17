@@ -1,0 +1,10 @@
+{
+  "centros": [
+    {
+      "ubicacion": {
+        "latitud": 80.0,
+        "longitud": 80.0
+      }
+    }
+  ]
+}
