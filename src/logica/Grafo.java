@@ -100,11 +100,11 @@ import java.util.Set;
 			return vertices.indexOf(p);
 		}
 
-		public int getPeso(int i, int j) {
+		public double getPeso(int i, int j) {
 			verificarVertice(i);
 			verificarVertice(j);
 			verificarDistintos(i, j);
-			return vertices.get(i).promedioDistancia(vertices.get(j));
+			return vertices.get(i).distancia(vertices.get(j));
 		}
 
 //		public boolean sonPesosIguales() {
@@ -170,7 +170,7 @@ import java.util.Set;
 			for (int i = 0; i < n - 1; i++) {
 				for (int j = i + 1; j < n; j++) {
 					if (existeArista(i, j))
-						pesos[i][j] = getPeso(i, j);
+						pesos[i][j] = (int) getPeso(i, j);
 					else
 						pesos[i][j] = -1;
 				}
