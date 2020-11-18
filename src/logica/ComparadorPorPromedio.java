@@ -13,7 +13,7 @@ public class ComparadorPorPromedio {
 		this.centrosClonados = centros;
 	}
 	
-	public ArrayList <Double> solver (int k){ //recibe la cantidad de centros
+	public ArrayList <Centro> solver (int k){ //recibe la cantidad de centros
 		ArrayList <Double> promedios = promedio();
 		ArrayList <Centro> centrosRet = new ArrayList<Centro>();
 		int indiceMin = 0;
@@ -24,7 +24,7 @@ public class ComparadorPorPromedio {
 			centrosClonados.remove(indiceMin);
 			promedios.remove(indiceMin);
 		}
-		return promedios;	
+		return centrosRet;	
 	}
 	
 	private int dameIndiceMenor (ArrayList <Double> promedios) {
@@ -43,7 +43,7 @@ public class ComparadorPorPromedio {
 		double sumaDistancia = 0;
 		for (Centro c : centros) {
 			for (Cliente cl : clientes) {
-				sumaDistancia += c.distanciaCliente(cl);
+				sumaDistancia += c.distancia(cl);
 			}
 			promedios.add((sumaDistancia)/clientes.size());
 			sumaDistancia = 0;

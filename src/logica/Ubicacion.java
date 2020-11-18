@@ -29,6 +29,11 @@ public class Ubicacion {
 		Ubicacion poloNorte = new Ubicacion (90,0);
 		Ubicacion poloSur = new Ubicacion (-90,0);
 		System.out.println(poloNorte.distancia(poloSur));
+	}
+
+	@Override
+	public String toString() {
+		return "latitud=" + latitud + ", longitud=" + longitud;
 	} 
 
 }

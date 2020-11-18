@@ -2,8 +2,62 @@
   "clientes": [
     {
       "ubicacion": {
-        "latitud": 40.0,
-        "longitud": 40.0
+        "latitud": -83.23055743217903,
+        "longitud": 101.81606809291758
+      }
+    },
+    {
+      "ubicacion": {
+        "latitud": 2.3510302133904437,
+        "longitud": 158.88786739303532
+      }
+    },
+    {
+      "ubicacion": {
+        "latitud": 45.40497923595683,
+        "longitud": -128.42249791248096
+      }
+    },
+    {
+      "ubicacion": {
+        "latitud": 85.5042149220916,
+        "longitud": 164.98437026059037
+      }
+    },
+    {
+      "ubicacion": {
+        "latitud": 17.52930804044094,
+        "longitud": -152.13177716101674
+      }
+    },
+    {
+      "ubicacion": {
+        "latitud": -2.6505346005787,
+        "longitud": -44.02600458293209
+      }
+    },
+    {
+      "ubicacion": {
+        "latitud": 4.92375698427606,
+        "longitud": -55.95836379278091
+      }
+    },
+    {
+      "ubicacion": {
+        "latitud": 54.58505882361544,
+        "longitud": -139.66981349774147
+      }
+    },
+    {
+      "ubicacion": {
+        "latitud": -10.131632013350817,
+        "longitud": 61.53260844204378
+      }
+    },
+    {
+      "ubicacion": {
+        "latitud": 3.3974841895199104,
+        "longitud": 67.38075743637299
       }
     }
   ]

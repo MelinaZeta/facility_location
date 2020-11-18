@@ -2,8 +2,32 @@
   "centros": [
     {
       "ubicacion": {
-        "latitud": 80.0,
-        "longitud": 80.0
+        "latitud": 38.33431237547702,
+        "longitud": -17.078777576145484
+      }
+    },
+    {
+      "ubicacion": {
+        "latitud": 65.57131718575131,
+        "longitud": -29.610069838551958
+      }
+    },
+    {
+      "ubicacion": {
+        "latitud": 15.619644785306752,
+        "longitud": 7.9595499792964075
+      }
+    },
+    {
+      "ubicacion": {
+        "latitud": 2.9863048446350926,
+        "longitud": 73.63695229247439
+      }
+    },
+    {
+      "ubicacion": {
+        "latitud": -32.721907324939515,
+        "longitud": 161.63023046710526
       }
     }
   ]

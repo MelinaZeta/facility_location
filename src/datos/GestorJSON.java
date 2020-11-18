@@ -39,18 +39,40 @@ public class GestorJSON {
 		return cen.getCentros();
 	}
 	
+	public static double randomDouble(int centro, int ancho) {
+		return  (((Math.random() - 0.5) * ancho) + centro);
+	}
+	
+	private static void generarClientesRandom(int cantidad) {
+		Cliente cliente;
+		Double lat, lon;
+		for(int i=0;i<cantidad;i++) {
+			lat= randomDouble(0,180);
+			lon= randomDouble(0,360);
+			cliente = new Cliente (new Ubicacion (lat,lon));
+			agregarClientes(cliente);
+			guardarClientes();
+		}
+	}
+	
+	private static void generarCentrosRandom(int cantidad) {
+		Centro centro;
+		Double lat, lon;
+		for(int i=0;i<cantidad;i++) {
+			lat= randomDouble(0,180);
+			lon= randomDouble(0,360);
+			centro = new Centro (new Ubicacion (lat,lon));
+			agregarCentros(centro);
+			guardarCentros();
+		}
+	}
+	
+	
 	public static void main (String [] args) {
-		Ubicacion ub1 = new Ubicacion (40,40);
-		Cliente cliente1 = new Cliente (ub1);
-		agregarClientes(cliente1);
-		guardarClientes();
 		
+		generarClientesRandom(10);
 		
-		Ubicacion ub2 = new Ubicacion (80,80);
-		Centro centro1 = new Centro (ub2);
-		agregarCentros(centro1);
-		guardarCentros();
-		
+		generarCentrosRandom(5);
 	
 		
 	}

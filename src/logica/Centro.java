@@ -11,9 +11,19 @@ public class Centro {
 		return ubicacion;
 	}
 	
-	public double distanciaCliente (Cliente cliente) {
-		double distancia = ubicacion.distancia(cliente.getUbicacionCliente());
+	public double distancia (Cliente cliente) {
+		double distancia = ubicacion.distancia(cliente.getUbicacion());
 		return distancia;
+	}
+	
+	public double distancia (Centro centro) {
+		double distancia = ubicacion.distancia(centro.getUbicacion());
+		return distancia;
+	}
+
+	@Override
+	public String toString() {
+		return "Centro [" + ubicacion + "]\n";
 	}
 
 }
