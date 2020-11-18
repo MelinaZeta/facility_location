@@ -11,17 +11,13 @@ public class Ubicacion {
 	}
 
 	public double distancia(Ubicacion otra) {
+		double h = semiverseno(latitud - otra.latitud)
+				+ Math.cos(latitud) * Math.cos(otra.latitud) * semiverseno(longitud - otra.longitud);
 		// Promedio de las distancias entre centro y clientes con formula de semiverseno
-		double distancia = 2 * RADIO_TIERRA * Math.asin(Math.sqrt(auxiliar(otra)));
+		double distancia = 2 * RADIO_TIERRA * Math.asin(Math.sqrt(h));
 		return distancia;
 	}
 
-	private double auxiliar(Ubicacion ubi2) {
-		double h = semiverseno(this.latitud - ubi2.latitud) + Math.cos(this.latitud) * Math.cos(ubi2.latitud)
-				* semiverseno(this.longitud - ubi2.longitud);
-		return h;
-
-	}
 
 	private double semiverseno(double angulo) {
 		angulo = (angulo * Math.PI * 2) / 360; // transformando de angulo a radiones
@@ -29,7 +25,7 @@ public class Ubicacion {
 		return seno;
 	}
 	
-	private static void main (String [] args) {
+	public static void main (String [] args) {
 		Ubicacion poloNorte = new Ubicacion (90,0);
 		Ubicacion poloSur = new Ubicacion (-90,0);
 		System.out.println(poloNorte.distancia(poloSur));

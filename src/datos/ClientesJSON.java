@@ -63,6 +63,10 @@ public class ClientesJSON {
 		return ret;
 	}
 	
+	
+	
+	
+	
 	public ArrayList<String> getClientesString (){
 		ArrayList<String> ret = new ArrayList<String>();
 		for (int i = 0; i < this.clientes.size(); i++) {

@@ -1,5 +1,7 @@
 package datos;
 
+import java.util.ArrayList;
+
 import logica.Centro;
 import logica.Cliente;
 import logica.Ubicacion;
@@ -14,7 +16,7 @@ public class GestorJSON {
 
 	public static void guardarClientes() {
 		String jsonPretty = clientes.generarJSONPretty();
-		clientes.guardarJSON(jsonPretty, "Clientes.JSON");
+		clientes.guardarJSON(jsonPretty, "Datos/Clientes.JSON");
 	}
 	
 	public static void agregarCentros(Centro centro) {
@@ -23,7 +25,18 @@ public class GestorJSON {
 
 	public static void guardarCentros() {
 		String jsonPretty = centros.generarJSONPretty();
-		centros.guardarJSON(jsonPretty, "Centros.JSON");
+		centros.guardarJSON(jsonPretty, "Datos/Centros.JSON");
+	}
+	
+	
+	public static ArrayList<Cliente> cargarClientesDesdeJSON() {
+		ClientesJSON cl=ClientesJSON.leerJSON("Datos/Clientes.JSON");
+		return cl.getClientes();
+	}
+	
+	public static ArrayList<Centro> cargarCentrosDesdeJSON() {
+		CentrosJSON cen = CentrosJSON.leerJSON("Datos/Centros.JSON");
+		return cen.getCentros();
 	}
 	
 	public static void main (String [] args) {
