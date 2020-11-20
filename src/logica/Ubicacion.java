@@ -1,6 +1,7 @@
 package logica;
 
 public class Ubicacion {
+	private static final int GRADOS_ANGULO = 360;
 	private static final int RADIO_TIERRA = 6371;
 	private double latitud;
 	private double longitud;
@@ -22,7 +23,7 @@ public class Ubicacion {
 
 
 	private double semiverseno(double angulo) {
-		angulo = (angulo * Math.PI * 2) / 360; // transformando de angulo a radiones
+		angulo = (angulo * Math.PI * 2) / GRADOS_ANGULO; // transformando de angulo a radiones
 		double seno = Math.pow(Math.sin(angulo / 2), 2);
 		return seno;
 	}
