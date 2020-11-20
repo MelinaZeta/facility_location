@@ -6,11 +6,12 @@ public class ComparadorPorPromedio {
 	private ArrayList <Cliente> clientes;
 	private ArrayList <Centro> centros;
 	private ArrayList <Centro> centrosClonados;
+	private ArrayList <Centro> elegidos;
 
 	public ComparadorPorPromedio(ArrayList <Cliente> clientes , ArrayList <Centro> centros) {
 		this.clientes = clientes;
 		this.centros =  centros;
-		this.centrosClonados = centros;
+		this.centrosClonados = clonarCentros();
 	}
 	
 	public ArrayList <Centro> solver (int k){ //recibe la cantidad de centros
@@ -24,6 +25,7 @@ public class ComparadorPorPromedio {
 			centrosClonados.remove(indiceMin);
 			promedios.remove(indiceMin);
 		}
+		elegidos=centrosRet;
 		return centrosRet;	
 	}
 	
@@ -51,6 +53,41 @@ public class ComparadorPorPromedio {
 		
 		return promedios;
 		
+	}
+	
+	private Double costo(ArrayList<Centro> centrosActual) {
+		ArrayList<Double> distanciasMinimas= new ArrayList<>();
+		double distMin;
+		double distActual;
+	
+		for(Cliente cl : clientes) {
+			distMin=cl.distancia(centrosActual.get(0));
+			for(Centro cn : centrosActual ) {				
+				distActual = cl.distancia(cn);
+				if(distActual<distMin) {
+					distMin= distActual;
+				}
+			}
+			distanciasMinimas.add(distMin);
+		}
+		double suma=0;
+		for(Double d : distanciasMinimas) {
+			suma+=d;
+		}
+		return suma;
+	}
+
+	public Double costo() {
+		return costo(elegidos);
+	}
+	
+	
+	public ArrayList<Centro>  clonarCentros(){
+		ArrayList<Centro> clonado = new ArrayList<Centro>();
+		for(Centro c : centros) {
+			clonado.add(c);
+		}
+		return clonado;
 	}
 
 }
