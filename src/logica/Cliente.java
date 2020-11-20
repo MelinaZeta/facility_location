@@ -1,26 +1,28 @@
 package logica;
 
-public class Cliente {
+public class Cliente implements ObjetoConCoordenadas {
 	private Ubicacion ubicacion;
 	
 	public Cliente (Ubicacion ubi) {
 		this.ubicacion = ubi;
 	}
-	
-	public double distancia (Centro centro) {
+
+	@Override
+	public double distancia(Centro centro) {
 		double distancia = ubicacion.distancia(centro.getUbicacion());
 		return distancia;
 	}
-	
-	public double distancia (Cliente cliente) {
+
+	@Override
+	public double distancia(Cliente cliente) {
 		double distancia = ubicacion.distancia(cliente.getUbicacion());
 		return distancia;
 	}
 
+	@Override
 	public Ubicacion getUbicacion() {
 		return ubicacion;
 	}
-	
-	
-	}
+		
+}
 

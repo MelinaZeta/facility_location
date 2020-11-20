@@ -2,20 +2,20 @@ package logica;
 
 public class GrafoCliente extends Grafo<Cliente> {
 
-	public double getPeso(int i, int j) {
+	public double getDistancia(int i, int j) {
 		verificarVertice(i);
 		verificarVertice(j);
 		verificarDistintos(i, j);
 		return vertices.get(i).distancia(vertices.get(j));
 	}
 
-	public int[][] calcularPesos() {
+	public int[][] calcularDistancias() {
 		int n = tamanio();
 		int[][] pesos = new int[n][n];
 		for (int i = 0; i < n - 1; i++) {
 			for (int j = i + 1; j < n; j++) {
 				if (existeArista(i, j))
-					pesos[i][j] = (int) getPeso(i, j);
+					pesos[i][j] = (int) getDistancia(i, j);
 				else
 					pesos[i][j] = -1;
 			}
@@ -23,8 +23,8 @@ public class GrafoCliente extends Grafo<Cliente> {
 		return pesos;
 	}
 
-	public void eliminarNodoMasPesado() {
-		int[][] pesos = calcularPesos();
+	public void eliminarNodoDistanciaMayor() {
+		int[][] pesos = calcularDistancias();
 		int maxArista = 0;
 
 		int n = tamanio();

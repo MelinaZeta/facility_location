@@ -104,7 +104,7 @@ public class EdicionDeAristaTest {
 	public void eliminarAristaMasPesada() {
 		grafo.completarGrafo();
 
-		grafo.eliminarNodoMasPesado();
+		grafo.eliminarNodoDistanciaMayor();
 		assertFalse(grafo.existeArista(4, 0));
 		assertTrue(grafo.existeArista(4, 1));
 	}
