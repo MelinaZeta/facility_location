@@ -13,9 +13,11 @@ public class Ubicacion {
 	public double distancia(Ubicacion otra) {
 		double h = semiverseno(latitud - otra.latitud)
 				+ Math.cos(latitud) * Math.cos(otra.latitud) * semiverseno(longitud - otra.longitud);
+		//vamos a sacar raiz cuadrada de h por lo que necesitamosque sea positivo
+		h= Math.abs(h);
 		// Promedio de las distancias entre centro y clientes con formula de semiverseno
 		double distancia = 2 * RADIO_TIERRA * Math.asin(Math.sqrt(h));
-		return distancia;
+		return Math.abs(distancia);
 	}
 
 
