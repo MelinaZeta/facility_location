@@ -8,56 +8,81 @@
     },
     {
       "ubicacion": {
-        "latitud": 2.3510302133904437,
-        "longitud": 158.88786739303532
+        "latitud": -34.982071,
+        "longitud": -58.376066
       }
     },
     {
       "ubicacion": {
-        "latitud": 45.40497923595683,
-        "longitud": -128.42249791248096
+        "latitud":  -34.466389, 
+        "longitud": -58.541667
       }
     },
     {
       "ubicacion": {
-        "latitud": 85.5042149220916,
-        "longitud": 164.98437026059037
+        "latitud":-35.033333,
+        "longitud": -58.733333
       }
     },
     {
       "ubicacion": {
-        "latitud": 17.52930804044094,
-        "longitud": -152.13177716101674
+        "latitud": -34.5,
+        "longitud":  -58.616667
       }
     },
     {
       "ubicacion": {
-        "latitud": -2.6505346005787,
-        "longitud": -44.02600458293209
+        "latitud": -34.4719, 
+        "longitud": -58.655
       }
     },
     {
       "ubicacion": {
-        "latitud": 4.92375698427606,
-        "longitud": -55.95836379278091
+        "latitud": -34.433333,
+        "longitud":  -59
       }
     },
     {
       "ubicacion": {
-        "latitud": 54.58505882361544,
-        "longitud": -139.66981349774147
+        "latitud": -34.45,
+        "longitud": -58.65
       }
     },
     {
       "ubicacion": {
-        "latitud": -10.131632013350817,
-        "longitud": 61.53260844204378
+        "latitud": -34.65,
+        "longitud":  -58.6
       }
     },
     {
       "ubicacion": {
-        "latitud": 3.3974841895199104,
-        "longitud": 67.38075743637299
+        "latitud": -34.466667,
+        "longitud": -58.766667
+      }
+    },
+    
+      {
+      "ubicacion": {
+        "latitud": -34.65,
+        "longitud":  -58.6
+      }
+    },
+      {
+      "ubicacion": {
+        "latitud":   -34.5, 
+        "longitud":  -58.7
+      }
+    },
+      {
+      "ubicacion": {
+        "latitud": -34.5, 
+        "longitud":  -58.6833
+      }
+    },
+      {
+      "ubicacion": {
+        "latitud": -34.45875, 
+        "longitud":  -58.914194
       }
     }
   ]

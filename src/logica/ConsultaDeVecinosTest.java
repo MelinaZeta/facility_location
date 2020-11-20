@@ -18,11 +18,11 @@ public class ConsultaDeVecinosTest {
 	@Before
 	public void setUp() throws Exception {
 		grafo = new GrafoCentro();
-		p1 = new Centro(new Ubicacion(40,40));
-		p2 = new Centro(new Ubicacion(20,30));
-		p3 = new Centro(new Ubicacion(20,50));
-		p4  = new Centro(new Ubicacion(30,10));
-		p5  = new Centro(new Ubicacion(30,50));
+		p1 = new Centro(new Ubicacion(40, 40));
+		p2 = new Centro(new Ubicacion(20, 30));
+		p3 = new Centro(new Ubicacion(20, 50));
+		p4 = new Centro(new Ubicacion(30, 10));
+		p5 = new Centro(new Ubicacion(30, 50));
 		grafo.agregarVertice(p1);
 		grafo.agregarVertice(p2);
 		grafo.agregarVertice(p3);
@@ -30,14 +30,13 @@ public class ConsultaDeVecinosTest {
 		grafo.agregarVertice(p5);
 	}
 
-	
 	@Test(expected = IllegalArgumentException.class)
 	public void vacinosNegativosTest() {
 		grafo.vecinos(-2).size();
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void vacinosExcedidosTest() {		
+	public void vacinosExcedidosTest() {
 		grafo.vecinos(6).size();
 	}
 
@@ -48,8 +47,8 @@ public class ConsultaDeVecinosTest {
 
 	@Test
 	public void verticeUniversalTest() {
-		grafo.agregarArista( 1, 0);
-		grafo.agregarArista( 1, 2);
+		grafo.agregarArista(1, 0);
+		grafo.agregarArista(1, 2);
 		grafo.agregarArista(1, 3);
 		Set<Centro> set = grafo.vecinos(1);
 		assertEquals(3, set.size());
@@ -61,7 +60,7 @@ public class ConsultaDeVecinosTest {
 	@Test
 	public void verticeNormal() {
 		grafo.agregarArista(1, 3);
-		grafo.agregarArista( 2, 3);
+		grafo.agregarArista(2, 3);
 		grafo.agregarArista(2, 4);
 		Set<Centro> set = grafo.vecinos(3);
 		assertEquals(2, set.size());
@@ -73,18 +72,18 @@ public class ConsultaDeVecinosTest {
 	public void noCompletoTest() {
 		assertFalse(grafo.esCompleto());
 	}
-	
+
 	@Test
 	public void completoTest() {
 		grafo.completarGrafo();
 		assertTrue(grafo.esCompleto());
 	}
-	
+
 	@Test
 	public void completoUnicoVertice() {
 		GrafoCentro g = new GrafoCentro();
 		g.agregarVertice(p1);
 		assertTrue(g.esCompleto());
 	}
-	
+
 }

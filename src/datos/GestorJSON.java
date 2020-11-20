@@ -14,18 +14,18 @@ public class GestorJSON {
 		clientes.addCliente(cliente);
 	}
 
-	public static void guardarClientes() {
+	public static void guardarClientes(String str) {
 		String jsonPretty = clientes.generarJSONPretty();
-		clientes.guardarJSON(jsonPretty, "Datos/Clientes.JSON");
+		clientes.guardarJSON(jsonPretty, str);
 	}
 	
 	public static void agregarCentros(Centro centro) {
 		centros.addCentro(centro);
 	}
 
-	public static void guardarCentros() {
+	public static void guardarCentros(String str) {
 		String jsonPretty = centros.generarJSONPretty();
-		centros.guardarJSON(jsonPretty, "Datos/Centros.JSON");
+		centros.guardarJSON(jsonPretty,  str);
 	}
 	
 	
@@ -51,7 +51,7 @@ public class GestorJSON {
 			lon= randomDouble(0,360);
 			cliente = new Cliente (new Ubicacion (lat,lon));
 			agregarClientes(cliente);
-			guardarClientes();
+			guardarClientes("Datos/ClientesRandom.JSON");
 		}
 	}
 	
@@ -63,7 +63,7 @@ public class GestorJSON {
 			lon= randomDouble(0,360);
 			centro = new Centro (new Ubicacion (lat,lon));
 			agregarCentros(centro);
-			guardarCentros();
+			guardarCentros("Datos/CentrosRandom.JSON");
 		}
 	}
 	

@@ -2,32 +2,27 @@
   "centros": [
     {
       "ubicacion": {
-        "latitud": 38.33431237547702,
-        "longitud": -17.078777576145484
+        "latitud":  -34.65, 
+        "longitud": -58.566667
       }
     },
     {
       "ubicacion": {
-        "latitud": 65.57131718575131,
-        "longitud": -29.610069838551958
+        "latitud":  -34.533333, 
+        "longitud": -58.716667
       }
     },
     {
       "ubicacion": {
-        "latitud": 15.619644785306752,
-        "longitud": 7.9595499792964075
+        "latitud": -34.466667,
+        "longitud": -58.766667
       }
     },
+    
     {
       "ubicacion": {
-        "latitud": 2.9863048446350926,
-        "longitud": 73.63695229247439
-      }
-    },
-    {
-      "ubicacion": {
-        "latitud": -32.721907324939515,
-        "longitud": 161.63023046710526
+        "latitud": -34.500148,
+        "longitud": -58.681064
       }
     }
   ]
