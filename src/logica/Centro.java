@@ -9,14 +9,8 @@ public class Centro implements ObjetoConCoordenadas {
 	}
 
 	@Override
-	public double distancia(Centro centro) {
-		double distancia = ubicacion.distancia(centro.getUbicacion());
-		return distancia;
-	}
-
-	@Override
-	public double distancia(Cliente cliente) {
-		double distancia = ubicacion.distancia(cliente.getUbicacion());
+	public double distancia(ObjetoConCoordenadas otro) {
+		double distancia = ubicacion.distancia(otro.getUbicacion());
 		return distancia;
 	}
 

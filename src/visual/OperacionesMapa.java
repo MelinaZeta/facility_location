@@ -69,7 +69,7 @@ public class OperacionesMapa {
 
 	private void eliminar() 
 	{
-		btnEliminar = new JButton("Eliminar Polígono");
+		btnEliminar = new JButton("Eliminar Polï¿½gono");
 		btnEliminar.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent arg0) 

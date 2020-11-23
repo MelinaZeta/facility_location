@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Grafo<T> {
+public class Grafo {
 	// Representamos el grafo por su matriz de adyacencia
-	protected ArrayList<HashSet<T>> vecinos;
-	protected ArrayList<T> vertices;
+	protected ArrayList<HashSet<ObjetoConCoordenadas>> vecinos;
+	protected ArrayList<ObjetoConCoordenadas> vertices;
 
 	// La cantidad de vertices esta predeterminada desde el constructor
 	public Grafo() {
-		
-		vecinos = new ArrayList<HashSet<T>>();
-		vertices = new ArrayList<T>();
+
+		vecinos = new ArrayList<HashSet<ObjetoConCoordenadas>>();
+		vertices = new ArrayList<ObjetoConCoordenadas>();
 	}
 
 	// Getters y setters de aristas
@@ -28,12 +28,12 @@ public class Grafo<T> {
 
 	}
 
-	public void agregarVertice(T ubi) {
+	public void agregarVertice(ObjetoConCoordenadas ubi) {
 		if (vertices.contains(ubi)) {
 			return;
 		}
 		vertices.add(ubi);
-		vecinos.add(new HashSet<T>());
+		vecinos.add(new HashSet<ObjetoConCoordenadas>());
 
 	}
 
@@ -52,12 +52,12 @@ public class Grafo<T> {
 		return vecinos.get(i).contains(vertices.get(j));
 	}
 
-	public Set<T> vecinos(int i) {
+	public Set<ObjetoConCoordenadas> vecinos(int i) {
 		verificarVertice(i);
 		return vecinos.get(i);
 	}
 
-	public ArrayList<T> vertices() {
+	public ArrayList<ObjetoConCoordenadas> vertices() {
 		return vertices;
 	}
 
@@ -77,7 +77,7 @@ public class Grafo<T> {
 			throw new IllegalArgumentException("El vertice no existe: " + i);
 	}
 
-	public int obtenerIndice(Ubicacion p) {
+	public int obtenerIndice(ObjetoConCoordenadas p) {
 		return vertices.indexOf(p);
 	}
 
@@ -96,15 +96,15 @@ public class Grafo<T> {
 		}
 	}
 
-	public boolean esUnVertice(Ubicacion p) {
+	public boolean esUnVertice(ObjetoConCoordenadas p) {
 		return vertices.contains(p);
 	}
 
-	public T getNodo(int i) {
+	public ObjetoConCoordenadas getNodo(int i) {
 		verificarVertice(i);
 		return vertices.get(i);
 	}
-	
+
 	public boolean esCompleto() {
 		boolean completo = true;
 		for (int i = 0; i < tamanio(); i++) {
@@ -116,6 +116,51 @@ public class Grafo<T> {
 		return completo;
 	}
 
-	
-	
+	public double getDistancia(int i, int j) {
+		verificarVertice(i);
+		verificarVertice(j);
+		verificarDistintos(i, j);
+		return vertices.get(i).distancia(vertices.get(j));
+	}
+
+	public int[][] calcularDistancias() {
+		int n = tamanio();
+		int[][] pesos = new int[n][n];
+		for (int i = 0; i < n - 1; i++) {
+			for (int j = i + 1; j < n; j++) {
+				if (existeArista(i, j))
+					pesos[i][j] = (int) getDistancia(i, j);
+				else
+					pesos[i][j] = -1;
+			}
+		}
+		return pesos;
+	}
+
+	public void eliminarNodoDistanciaMayor() {
+		int[][] pesos = calcularDistancias();
+		int maxArista = 0;
+
+		int n = tamanio();
+		int iMin = 0;
+		int jMin = 0;
+
+		for (int i = 0; i < n - 1; i++) {
+			for (int j = i + 1; j < n; j++) {
+				if (pesos[i][j] >= maxArista && pesos[i][j] >= 0) {
+					maxArista = pesos[i][j];
+					iMin = i;
+					jMin = j;
+				}
+			}
+		}
+
+		if (!existeArista(iMin, jMin)) {
+			throw new IllegalStateException("Los valores encontrados no son validos iMin=" + iMin + " jMIn=" + jMin);
+		}
+
+		eliminarArista(iMin, jMin);
+
+	}
+
 }

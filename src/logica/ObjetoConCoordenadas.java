@@ -1,7 +1,6 @@
 package logica;
 
 public interface ObjetoConCoordenadas {
-	public double distancia (Centro centro);
-	public double distancia (Cliente cliente);
+	public double distancia (ObjetoConCoordenadas otro);
 	public Ubicacion getUbicacion();
 }

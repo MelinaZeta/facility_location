@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class EdicionDeAristaTest {
-	GrafoCentro grafo;
+	Grafo grafo;
 	Centro p1;
 	Centro p2;
 	Centro p3;
@@ -15,12 +15,12 @@ public class EdicionDeAristaTest {
 
 	@Before
 	public void setUp() throws Exception {
-		grafo = new GrafoCentro();
-		p1 = new Centro(new Ubicacion(0,0));
-		p2 = new Centro(new Ubicacion(20,30));
-		p3 = new Centro(new Ubicacion(20,50));
-		p4  = new Centro(new Ubicacion(30,10));
-		p5  = new Centro(new Ubicacion(30,60));
+		grafo = new Grafo();
+		p1 = new Centro(new Ubicacion(0, 0));
+		p2 = new Centro(new Ubicacion(20, 30));
+		p3 = new Centro(new Ubicacion(20, 50));
+		p4 = new Centro(new Ubicacion(30, 10));
+		p5 = new Centro(new Ubicacion(30, 60));
 		grafo.agregarVertice(p1);
 		grafo.agregarVertice(p2);
 		grafo.agregarVertice(p3);
@@ -44,7 +44,7 @@ public class EdicionDeAristaTest {
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void segundoVerticeExcedidoTest() {
+	public void s() {
 		grafo.agregarArista(1, 5);
 	}
 

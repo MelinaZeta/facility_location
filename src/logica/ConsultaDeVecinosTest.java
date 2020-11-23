@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class ConsultaDeVecinosTest {
-	GrafoCentro grafo;
+	Grafo grafo;
 	Centro p1;
 	Centro p2;
 	Centro p3;
@@ -17,7 +17,7 @@ public class ConsultaDeVecinosTest {
 
 	@Before
 	public void setUp() throws Exception {
-		grafo = new GrafoCentro();
+		grafo = new Grafo();
 		p1 = new Centro(new Ubicacion(40, 40));
 		p2 = new Centro(new Ubicacion(20, 30));
 		p3 = new Centro(new Ubicacion(20, 50));
@@ -50,7 +50,7 @@ public class ConsultaDeVecinosTest {
 		grafo.agregarArista(1, 0);
 		grafo.agregarArista(1, 2);
 		grafo.agregarArista(1, 3);
-		Set<Centro> set = grafo.vecinos(1);
+		Set<ObjetoConCoordenadas> set = grafo.vecinos(1);
 		assertEquals(3, set.size());
 		assertTrue(set.contains(p1));
 		assertTrue(set.contains(p3));
@@ -62,7 +62,7 @@ public class ConsultaDeVecinosTest {
 		grafo.agregarArista(1, 3);
 		grafo.agregarArista(2, 3);
 		grafo.agregarArista(2, 4);
-		Set<Centro> set = grafo.vecinos(3);
+		Set<ObjetoConCoordenadas> set = grafo.vecinos(3);
 		assertEquals(2, set.size());
 		assertTrue(set.contains(p2));
 		assertTrue(set.contains(p3));
@@ -81,7 +81,7 @@ public class ConsultaDeVecinosTest {
 
 	@Test
 	public void completoUnicoVertice() {
-		GrafoCentro g = new GrafoCentro();
+		Grafo g = new Grafo();
 		g.agregarVertice(p1);
 		assertTrue(g.esCompleto());
 	}
