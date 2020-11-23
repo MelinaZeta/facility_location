@@ -18,6 +18,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import controlador.Controlador;
 
 public class VentanaMapa 
 {
@@ -61,12 +62,16 @@ public class VentanaMapa
 		_mapa = new JMapViewer();
 		_mapa.setZoomControlsVisible(true);
 		Coordinate coordinate = new Coordinate(-34.521, -58.7008);
+		_mapa.setDisplayPosition(coordinate, 10);
 		
 		//para desplazarnos en el mapa
 		DefaultMapController mapController = new DefaultMapController(_mapa);
 	    mapController.setMovementMouseButton(MouseEvent.BUTTON1);
 		
 		panelMapa.add(_mapa);
+		
+		Controlador.graficarPunto(_mapa);
+		Controlador.graficarPoligono(_mapa);
 	}
 
 	private void eliminarCamino() 

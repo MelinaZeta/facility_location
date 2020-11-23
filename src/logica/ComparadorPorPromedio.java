@@ -1,6 +1,10 @@
 package logica;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ComparadorPorPromedio {
 	private ArrayList <Cliente> clientes;
@@ -90,4 +94,45 @@ public class ComparadorPorPromedio {
 		return clonado;
 	}
 
+	public Collection<ArrayList<Cliente>> getVecinos (){
+		
+		double distMin;
+		double distActual;
+		
+		
+		HashMap<Centro, ArrayList<Cliente>> vecinos = new HashMap<Centro,ArrayList<Cliente>>();
+		
+		for(Cliente cl : clientes) {
+			
+			Centro masCercano = centroMasCercano(cl);
+			
+			if ( vecinos.containsKey(masCercano)) {
+				vecinos.get(masCercano).add(cl);
+			}
+			else {
+				System.out.print("elegido " + masCercano);
+				vecinos.put(masCercano, new ArrayList<Cliente>()) ;
+				vecinos.get(masCercano).add(cl);
+			}
+		}
+		
+		return vecinos.values();
+	}
+	
+	public Centro centroMasCercano (Cliente c ) {
+		double distMin = Double.POSITIVE_INFINITY;
+		double distActual;
+		Centro centroRet = new Centro(null);
+		
+		
+		for (Centro cn : elegidos ) {
+			distActual = c.distancia(cn);
+			if (distActual<distMin) {
+				distMin = distActual;
+				centroRet = cn;
+			}
+		}
+		
+		return centroRet;
+	}
 }

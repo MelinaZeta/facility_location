@@ -38,5 +38,13 @@ public class Ubicacion {
 	public String toString() {
 		return "latitud=" + latitud + ", longitud=" + longitud;
 	} 
+	
+	public double getLongitud() {
+		return longitud;
+	}
+	
+	public double getLatitud() {
+		return latitud;
+	}
 
 }
