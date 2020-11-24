@@ -2,6 +2,7 @@ package controlador;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 
 import org.openstreetmap.gui.jmapviewer.JMapViewer;
 
@@ -10,26 +11,14 @@ import logica.Centro;
 import logica.Cliente;
 import logica.ComparadorPorPromedio;
 import logica.ObjetoConCoordenadas;
-import visual.OperacionesMapa;
 
 public class Controlador {
 	
-	private static ArrayList<Cliente> clientes;
-	private static ArrayList<Centro> centros;
-	
-	public Controlador () {
-		
-
-	}
+	private static ArrayList<Cliente> clientes= GestorJSON.cargarClientesDesdeJSON();
+	private static ArrayList<Centro> centros=GestorJSON.cargarCentrosDesdeJSON();
 	
 	
 	public static void graficarPunto (JMapViewer mapa ) {
-		
-		
-		clientes = GestorJSON.cargarClientesDesdeJSON();
-		centros = GestorJSON.cargarCentrosDesdeJSON();
-		System.out.print(clientes);
-		
 		
 		for (Cliente c : clientes) {
 			OperacionesMapa.dibujarPuntos(c, mapa);
@@ -43,16 +32,14 @@ public class Controlador {
 	
 	public static void graficarPoligono (JMapViewer mapa ) {
 		
-		clientes = GestorJSON.cargarClientesDesdeJSON();
-		centros = GestorJSON.cargarCentrosDesdeJSON();
 		ArrayList<Centro> elegidos;
 		
 		ComparadorPorPromedio comp = new ComparadorPorPromedio(clientes , centros);
 		elegidos= comp.solver(2);
 		
-		Collection<ArrayList<Cliente>> vecinos = comp.getVecinos();
+		HashMap<Centro, ArrayList<Cliente>> vecinos = comp.getVecinos();
 		
-		for (ArrayList<Cliente> cl : vecinos) {
+		for (ArrayList<Cliente> cl : vecinos.values()) {
 			OperacionesMapa.dibujarPoligono(cl, mapa);
 		}
 	}

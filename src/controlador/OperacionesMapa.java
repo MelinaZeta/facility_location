@@ -1,4 +1,4 @@
-package visual;
+package controlador;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;

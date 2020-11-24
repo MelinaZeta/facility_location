@@ -24,7 +24,7 @@ public class SelectorDeLocacion {
 		 
 		 LocacionPorFuerzaBruta fb = new LocacionPorFuerzaBruta(clientes,centros);
 		 elegidosFB = fb.resolver(3);
-		 System.out.println("Centros elegidos por promedio (Costo "+ fb.costo()+")\n\n"+elegidosFB);
+		 System.out.println("Centros elegidos por fuerza bruta (Costo "+ fb.costo()+")\n\n"+elegidosFB);
 		 
 	 }
 	 

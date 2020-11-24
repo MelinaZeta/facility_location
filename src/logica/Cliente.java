@@ -1,5 +1,7 @@
 package logica;
 
+import java.util.ArrayList;
+
 public class Cliente implements ObjetoConCoordenadas {
 	private Ubicacion ubicacion;
 	
