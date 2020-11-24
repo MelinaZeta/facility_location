@@ -30,7 +30,7 @@ public class Controlador {
 		}
 	}
 	
-	public static void graficarPoligono (JMapViewer mapa ) {
+	public static void graficarLineas (JMapViewer mapa ) {
 		
 		ArrayList<Centro> elegidos;
 		
@@ -41,6 +41,12 @@ public class Controlador {
 		
 		for (ArrayList<Cliente> cl : vecinos.values()) {
 			OperacionesMapa.dibujarPoligono(cl, mapa);
+		}
+		
+		for(Centro cn : vecinos.keySet()) {
+			for(Cliente cl : vecinos.get(cn)) {
+				OperacionesMapa.dibujarLinea(cl, cn, mapa);
+			}
 		}
 	}
 	

@@ -1,5 +1,7 @@
 package logica;
 
+import org.openstreetmap.gui.jmapviewer.Coordinate;
+
 public class Ubicacion {
 	private static final int GRADOS_ANGULO = 360;
 	private static final int RADIO_TIERRA = 6371;
@@ -45,6 +47,10 @@ public class Ubicacion {
 	
 	public double getLatitud() {
 		return latitud;
+	}
+	
+	public Coordinate convertirACordenada() {
+		return new Coordinate(getLatitud(),getLongitud());
 	}
 
 }

@@ -74,7 +74,7 @@ public class VentanaMapa
 		panelMapa.add(_mapa);
 		
 		Controlador.graficarPunto(_mapa);
-		Controlador.graficarPoligono(_mapa);
+		Controlador.graficarLineas(_mapa);
 	}
 
 	private void eliminarCamino() 
@@ -131,7 +131,7 @@ public class VentanaMapa
 
 	private void eliminar() 
 	{
-		btnEliminar = new JButton("Eliminar Polígono");
+		btnEliminar = new JButton("Eliminar Polï¿½gono");
 		btnEliminar.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent arg0) 

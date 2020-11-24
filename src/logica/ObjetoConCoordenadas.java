@@ -1,5 +1,7 @@
 package logica;
 
+import org.openstreetmap.gui.jmapviewer.Coordinate;
+
 public interface ObjetoConCoordenadas {
 	
 	public double distancia (ObjetoConCoordenadas otro);
@@ -11,5 +13,7 @@ public interface ObjetoConCoordenadas {
 	public boolean esCliente ();
 	
 	public String getNombre();
+	
+	public Coordinate getCoordenadas();
 	
 }

@@ -1,5 +1,7 @@
 package logica;
 
+import org.openstreetmap.gui.jmapviewer.Coordinate;
+
 public class Cliente implements ObjetoConCoordenadas {
 	
 	private Ubicacion ubicacion;
@@ -74,6 +76,11 @@ public class Cliente implements ObjetoConCoordenadas {
 	@Override
 	public String toString() {
 		return "Cliente nombre :" + this.nombre + "ubicacion=" + ubicacion;
+	}
+
+	@Override
+	public Coordinate getCoordenadas() {
+		return getUbicacion().convertirACordenada();
 	}
 		
 }

@@ -1,15 +1,16 @@
 package logica;
 
-public class Centro implements ObjetoConCoordenadas {	
+import org.openstreetmap.gui.jmapviewer.Coordinate;
+
+public class Centro implements ObjetoConCoordenadas {
 	private Ubicacion ubicacion;
 	private String nombre;
-	
-	public Centro (Ubicacion ubi, String nom) {
+
+	public Centro(Ubicacion ubi, String nom) {
 		this.ubicacion = ubi;
 		this.nombre = nom;
 	}
-	
-	
+
 	@Override
 	public double distancia(ObjetoConCoordenadas otro) {
 		double distancia = ubicacion.distancia(otro.getUbicacion());
@@ -23,20 +24,19 @@ public class Centro implements ObjetoConCoordenadas {
 
 	@Override
 	public boolean esCentro() {
-		
+
 		return true;
 	}
 
 	@Override
 	public boolean esCliente() {
-		
+
 		return false;
 	}
-	
+
 	public String getNombre() {
 		return this.nombre;
 	}
-
 
 	@Override
 	public int hashCode() {
@@ -46,7 +46,6 @@ public class Centro implements ObjetoConCoordenadas {
 		result = prime * result + ((ubicacion == null) ? 0 : ubicacion.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -69,10 +68,15 @@ public class Centro implements ObjetoConCoordenadas {
 			return false;
 		return true;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Centro nombre :" + this.nombre + "ubicacion=" + ubicacion;
+	}
+
+	@Override
+	public Coordinate getCoordenadas() {
+		return getUbicacion().convertirACordenada();
 	}
 
 }

@@ -3,6 +3,7 @@ package controlador;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.openstreetmap.gui.jmapviewer.Coordinate;
 import org.openstreetmap.gui.jmapviewer.JMapViewer;
@@ -39,16 +40,21 @@ public class OperacionesMapa {
 		ArrayList <Coordinate > coordenadas = new ArrayList<Coordinate>();
 		
 		for (ObjetoConCoordenadas obj : clientesCercanos) {
-			Coordinate coordenada = new Coordinate(obj.getUbicacion().getLatitud(), obj.getUbicacion().getLongitud());
-			coordenadas.add(coordenada);
+			coordenadas.add(obj.getCoordenadas());
 		}
 		
 		MapPolygonImpl poligono = new MapPolygonImpl(coordenadas);
 		
-		poligono.getStyle().setBackColor(Color.cyan);
-		mapa.addMapPolygon(poligono);
-		
-		
+//		poligono.getStyle().setBackColor(Color.cyan);
+		mapa.addMapPolygon(poligono);	
+	}
+	
+	public static void dibujarLinea(ObjetoConCoordenadas punto1, ObjetoConCoordenadas punto2, JMapViewer mapa) {
+		Coordinate coord1 = punto1.getCoordenadas();
+		Coordinate coord2 = punto2.getCoordenadas();
+		ArrayList<Coordinate> route = new ArrayList<Coordinate>(Arrays.asList(coord1, coord2, coord2));
+		mapa.addMapPolygon(new MapPolygonImpl(route));
+
 	}
 //	private void eliminarCamino() 
 //	{
