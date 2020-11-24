@@ -36,6 +36,12 @@ public class Grafo {
 		vecinos.add(new HashSet<ObjetoConCoordenadas>());
 
 	}
+	
+	public void agregarVertices(ArrayList<ObjetoConCoordenadas> vertices) {
+		for(ObjetoConCoordenadas v : vertices) {
+			this.agregarVertice((ObjetoConCoordenadas)v);
+		}
+	}
 
 	public void eliminarArista(int i1, int i2) {
 		verificarVertice(i1);
@@ -162,5 +168,10 @@ public class Grafo {
 		eliminarArista(iMin, jMin);
 
 	}
-
+	
+	public void eliminarNodoDistanciaMayor(int nroAEliminar) {
+		for(int i=0; i<nroAEliminar;i++) {
+			eliminarNodoDistanciaMayor();
+		}
+	}
 }
