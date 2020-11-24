@@ -1,14 +1,8 @@
 package controlador;
 
 import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.Font;
 import java.util.ArrayList;
-
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
 
 import org.openstreetmap.gui.jmapviewer.Coordinate;
 import org.openstreetmap.gui.jmapviewer.JMapViewer;
@@ -25,7 +19,11 @@ public class OperacionesMapa {
 	public static void dibujarPuntos (ObjetoConCoordenadas obj, JMapViewer mapa) {
 		double latitud = obj.getUbicacion().getLatitud();
 		double longitud = obj.getUbicacion().getLongitud();
-		MapMarkerDot mark = new MapMarkerDot(latitud, longitud);
+		
+		Coordinate coor = new Coordinate (latitud, longitud);
+		MapMarkerDot mark = new MapMarkerDot(obj.getNombre() , coor);
+		
+		mark.getStyle().setFont(new Font("Sitka Banner", java.awt.Font.PLAIN, 20));
 		
 		if (obj.esCentro()) {
 			mark.getStyle().setBackColor(Color.red);

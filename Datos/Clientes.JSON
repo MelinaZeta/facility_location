@@ -4,37 +4,47 @@
       "ubicacion": {
         "latitud": -34.982071,
         "longitud": -58.376066
-      }
     },
+      "nombre": "Cliente A"
+    },
+    
     {
       "ubicacion": {
         "latitud":  -34.466389, 
         "longitud": -58.541667
-      }
+      
+    },
+    	"nombre": "Cliente B"
     },
     {
       "ubicacion": {
         "latitud":  -34.516667, 
         "longitud": -58.766667
-      }
+    
     },
+    	"nombre": "Cliente C"
+    	},
     {
       "ubicacion": {
         "latitud":  -34.5, 
         "longitud": -58.7
-      }
+      
+    },
+    	"nombre": "Cliente D"
     },
      {
       "ubicacion": {
         "latitud":  -34.45, 
         "longitud": -58.65
-      }
+    },
+    	"nombre": "Cliente E"
     },
     {
       "ubicacion": {
         "latitud":-35.033333,
         "longitud": -58.733333
-      }
+        },
+        "nombre": "Cliente F"
     }
   ]
 }

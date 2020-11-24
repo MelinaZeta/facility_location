@@ -102,7 +102,7 @@ public class ComparadorPorPromedio {
 	public Centro centroMasCercano(Cliente c) {
 		double distMin = Double.POSITIVE_INFINITY;
 		double distActual;
-		Centro centroRet = new Centro(null);
+		Centro centroRet = new Centro(null, "");
 
 		for (Centro cn : elegidos) {
 			distActual = c.distancia(cn);

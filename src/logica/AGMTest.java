@@ -18,11 +18,11 @@ public class AGMTest {
 	public void setUp() throws Exception {
 		
 		grafo = new Grafo();
-		p0 = new Cliente(new Ubicacion(0, 0));
-		p1 = new Cliente(new Ubicacion(20, 30));
-		p2 = new Cliente(new Ubicacion(20, 50));
-		p3 = new Cliente(new Ubicacion(30, 10));
-		p4 = new Cliente(new Ubicacion(30, 60));
+		p0 = new Cliente(new Ubicacion(0, 0), "");
+		p1 = new Cliente(new Ubicacion(20, 30), "");
+		p2 = new Cliente(new Ubicacion(20, 50),"");
+		p3 = new Cliente(new Ubicacion(30, 10),"");
+		p4 = new Cliente(new Ubicacion(30, 60), "");
 		grafo.agregarVertice(p0);
 		grafo.agregarVertice(p1);
 		grafo.agregarVertice(p2);

@@ -18,11 +18,11 @@ public class ConsultaDeVecinosTest {
 	@Before
 	public void setUp() throws Exception {
 		grafo = new Grafo();
-		p1 = new Centro(new Ubicacion(40, 40));
-		p2 = new Centro(new Ubicacion(20, 30));
-		p3 = new Centro(new Ubicacion(20, 50));
-		p4 = new Centro(new Ubicacion(30, 10));
-		p5 = new Centro(new Ubicacion(30, 50));
+		p1 = new Centro(new Ubicacion(40, 40), "");
+		p2 = new Centro(new Ubicacion(20, 30), "");
+		p3 = new Centro(new Ubicacion(20, 50), "");
+		p4 = new Centro(new Ubicacion(30, 10), "");
+		p5 = new Centro(new Ubicacion(30, 50), "");
 		grafo.agregarVertice(p1);
 		grafo.agregarVertice(p2);
 		grafo.agregarVertice(p3);

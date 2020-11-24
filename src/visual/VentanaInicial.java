@@ -5,6 +5,8 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+
 import java.awt.Color;
 import java.awt.Dimension;
 
@@ -21,7 +23,6 @@ public class VentanaInicial extends ModeloVentana {
 
 	private JPanel panelInicial;
 	private CambiadorDeVentanas cVent;
-	private JPanel panelPersonasCargadas;
 
 	/**
 	 * Launch the application.
@@ -50,9 +51,10 @@ public class VentanaInicial extends ModeloVentana {
 				30, 401, 94);
 
 
-		JButton btnClustering = createButton(panelInicial, "Ver mapa", 688, 366, 138,
+		JButton btnVerMapa = createButton(panelInicial, "Ver mapa", 600, 450, 138,
 				67);
-		btnClustering.addActionListener(new ActionListener() {
+
+		btnVerMapa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				cVent.cambiarAMapa();
 			}
@@ -64,7 +66,5 @@ public class VentanaInicial extends ModeloVentana {
 		return this.panelInicial;
 	}
 
-	public JPanel getPanelPersonas() {
-		return panelPersonasCargadas;
-	}
+
 }

@@ -1,0 +1,74 @@
+{
+  "clientes": [
+    {
+      "ubicacion": {
+        "latitud": -10.300849350955698,
+        "longitud": -77.90378182075186
+      },
+      "nombre": "A"
+    },
+    {
+      "ubicacion": {
+        "latitud": 75.8619334035879,
+        "longitud": 147.66888289954375
+      },
+      "nombre": "A"
+    },
+    {
+      "ubicacion": {
+        "latitud": -65.33797280457516,
+        "longitud": 14.935915895633535
+      },
+      "nombre": "A"
+    },
+    {
+      "ubicacion": {
+        "latitud": 25.19713740163853,
+        "longitud": 135.63902281192154
+      },
+      "nombre": "A"
+    },
+    {
+      "ubicacion": {
+        "latitud": -78.92280920451748,
+        "longitud": -50.33010190293995
+      },
+      "nombre": "A"
+    },
+    {
+      "ubicacion": {
+        "latitud": 46.60960979947932,
+        "longitud": -34.12672666144848
+      },
+      "nombre": "A"
+    },
+    {
+      "ubicacion": {
+        "latitud": 68.22565581858363,
+        "longitud": 71.51628988334878
+      },
+      "nombre": "A"
+    },
+    {
+      "ubicacion": {
+        "latitud": -4.378037024693755,
+        "longitud": 157.63692796515184
+      },
+      "nombre": "A"
+    },
+    {
+      "ubicacion": {
+        "latitud": 73.7254668439583,
+        "longitud": -133.36252505344567
+      },
+      "nombre": "A"
+    },
+    {
+      "ubicacion": {
+        "latitud": -42.05818405443053,
+        "longitud": -145.32457563232018
+      },
+      "nombre": "A"
+    }
+  ]
+}

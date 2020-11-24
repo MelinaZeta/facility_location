@@ -10,4 +10,6 @@ public interface ObjetoConCoordenadas {
 	
 	public boolean esCliente ();
 	
+	public String getNombre();
+	
 }

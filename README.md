@@ -15,9 +15,15 @@
 - [x] Implementar Clase Grafo de Objeto con Ubicacion
 - [x] Implementar heuristica basada en distancias promedios
 - [x] Implementar heuristica basada en grafos
-- [ ] Testear capa logica
-- [ ] Establecer una interface visual
-- [ ] Implementar JMapViewer
-- [ ] Comunicar la interface con el código de negocio
+- [x] Testear capa logica
+- [x] Establecer una interface visual
+- [x] Implementar JMapViewer
+- [x] Comunicar la interface con el código de negocio
 - [ ] Mostrar estadísticas 
-
+- [ ] Interfaz ( ventana inicial, estadisticas y nombre de clientes y centros ) 
+- [ ] Buscar centros y clientes que queden relativamente bien 
+- [ ] Señalar cuales son los centros elegidos 
+- [ ] Poner el mapa en pantalla completa 
+- [ ] Agregar botones de heuristicas 
+- [ ] Mostrar cuanto sale abrir los centros segun el algoritmo goloso 
+- [x] Escribir en un JSON los centros elegidos

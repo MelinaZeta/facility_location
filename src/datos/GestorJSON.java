@@ -49,7 +49,7 @@ public class GestorJSON {
 		for(int i=0;i<cantidad;i++) {
 			lat= randomDouble(0,180);
 			lon= randomDouble(0,360);
-			cliente = new Cliente (new Ubicacion (lat,lon));
+			cliente = new Cliente (new Ubicacion (lat,lon), "A");
 			agregarClientes(cliente);
 			guardarClientes("Datos/ClientesRandom.JSON");
 		}
@@ -61,7 +61,7 @@ public class GestorJSON {
 		for(int i=0;i<cantidad;i++) {
 			lat= randomDouble(0,180);
 			lon= randomDouble(0,360);
-			centro = new Centro (new Ubicacion (lat,lon));
+			centro = new Centro (new Ubicacion (lat,lon),"B");
 			agregarCentros(centro);
 			guardarCentros("Datos/CentrosRandom.JSON");
 		}

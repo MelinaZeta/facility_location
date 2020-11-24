@@ -47,12 +47,12 @@ public class VentanaMapa
 	 */
 	private void initialize() 
 	{
-		panelMapa.setBounds(10, 11, 437, 446);
-		panelControles = new JPanel();
-		panelControles.setBounds(457, 11, 242, 446);
+		panelMapa.setBounds(0, 0, 1400,750);
+//		panelControles = new JPanel();
+//		panelControles.setBounds(457, 11, 242, 446);
 		//frame.getContentPane().add(panelControles);
 		
-		panelControles.setLayout(null);
+	//	panelControles.setLayout(null);
 		
 //		dibujarPoligono();
 //		eliminar();
@@ -61,8 +61,11 @@ public class VentanaMapa
 		
 		_mapa = new JMapViewer();
 		_mapa.setZoomControlsVisible(true);
+		_mapa.setSize(1300, 650);
+		
 		Coordinate coordinate = new Coordinate(-34.521, -58.7008);
 		_mapa.setDisplayPosition(coordinate, 10);
+		
 		
 		//para desplazarnos en el mapa
 		DefaultMapController mapController = new DefaultMapController(_mapa);
