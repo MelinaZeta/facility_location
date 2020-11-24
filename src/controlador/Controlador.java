@@ -10,6 +10,7 @@ import datos.GestorJSON;
 import logica.Centro;
 import logica.Cliente;
 import logica.ComparadorPorPromedio;
+import logica.LocacionPorFuerzaBruta;
 import logica.ObjetoConCoordenadas;
 
 public class Controlador {
@@ -30,12 +31,14 @@ public class Controlador {
 		}
 	}
 	
-	public static void graficarLineas (JMapViewer mapa ) {
+	public static void graficarMapaPorPromedios (JMapViewer mapa ) {
 		
 		ArrayList<Centro> elegidos;
 		
 		ComparadorPorPromedio comp = new ComparadorPorPromedio(clientes , centros);
 		elegidos= comp.solver(2);
+		
+		graficarPunto(mapa);
 		
 		HashMap<Centro, ArrayList<Cliente>> vecinos = comp.getVecinos();
 		
@@ -50,4 +53,26 @@ public class Controlador {
 		}
 	}
 	
+	
+public static void graficarMapaPorFuerzaBruta (JMapViewer mapa ) {
+		
+		ArrayList<Centro> elegidos;
+		
+		LocacionPorFuerzaBruta comp = new LocacionPorFuerzaBruta(clientes , centros);
+		elegidos= comp.resolver(2);
+		
+		graficarPunto(mapa);
+		
+		HashMap<Centro, ArrayList<Cliente>> vecinos = comp.getVecinos();
+		
+		for (ArrayList<Cliente> cl : vecinos.values()) {
+			OperacionesMapa.dibujarPoligono(cl, mapa);
+		}
+		
+		for(Centro cn : vecinos.keySet()) {
+			for(Cliente cl : vecinos.get(cn)) {
+				OperacionesMapa.dibujarLinea(cl, cn, mapa);
+			}
+		}
+	}
 }

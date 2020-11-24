@@ -1,6 +1,7 @@
 package logica;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class LocacionPorFuerzaBruta {
 
@@ -91,6 +92,41 @@ public class LocacionPorFuerzaBruta {
 			nuevo.add(c);
 		}
 		return nuevo;
+	}
+	
+	public HashMap<Centro, ArrayList<Cliente>> getVecinos() {
+
+		HashMap<Centro, ArrayList<Cliente>> vecinos = new HashMap<Centro, ArrayList<Cliente>>();
+
+		for (Cliente cl : clientes) {
+
+			Centro masCercano = centroMasCercano(cl);
+
+			if (vecinos.containsKey(masCercano)) {
+				vecinos.get(masCercano).add(cl);
+			} else {
+				vecinos.put(masCercano, new ArrayList<Cliente>());
+				vecinos.get(masCercano).add(cl);
+			}
+		}
+
+		return vecinos;
+	}
+	
+	public Centro centroMasCercano(Cliente c) {
+		double distMin = Double.POSITIVE_INFINITY;
+		double distActual;
+		Centro centroRet = new Centro(null, "");
+
+		for (Centro cn : elegidos) {
+			distActual = c.distancia(cn);
+			if (distActual < distMin) {
+				distMin = distActual;
+				centroRet = cn;
+			}
+		}
+
+		return centroRet;
 	}
 
 }

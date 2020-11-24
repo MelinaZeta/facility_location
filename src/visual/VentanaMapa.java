@@ -73,8 +73,9 @@ public class VentanaMapa
 		
 		panelMapa.add(_mapa);
 		
-		Controlador.graficarPunto(_mapa);
-		Controlador.graficarLineas(_mapa);
+		
+		Controlador.graficarMapaPorPromedios(_mapa);
+		//Controlador.graficarMapaPorFuerzaBruta(_mapa);
 	}
 
 	private void eliminarCamino() 
