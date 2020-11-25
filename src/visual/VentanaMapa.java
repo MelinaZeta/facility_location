@@ -18,7 +18,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-import controlador.Controlador;
+import controlador.ControladorMapa;
 
 public class VentanaMapa 
 {
@@ -73,9 +73,9 @@ public class VentanaMapa
 		
 		panelMapa.add(_mapa);
 		
+		ControladorMapa.setMapa(_mapa);
 		
-		Controlador.graficarMapaPorPromedios(_mapa);
-		//Controlador.graficarMapaPorFuerzaBruta(_mapa);
+		
 	}
 
 	private void eliminarCamino() 

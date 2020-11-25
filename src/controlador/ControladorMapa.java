@@ -13,13 +13,17 @@ import logica.ComparadorPorPromedio;
 import logica.LocacionPorFuerzaBruta;
 import logica.ObjetoConCoordenadas;
 
-public class Controlador {
+public class ControladorMapa {
 	
 	private static ArrayList<Cliente> clientes= GestorJSON.cargarClientesDesdeJSON();
 	private static ArrayList<Centro> centros=GestorJSON.cargarCentrosDesdeJSON();
+	public static boolean opcion1;
+	public static boolean opcion2;
+	public static JMapViewer mapa;
+	public static ArrayList<Centro> elegidos;
 	
 	
-	public static void graficarPunto (JMapViewer mapa ) {
+	public static void graficarPuntos ( ) {
 		
 		for (Cliente c : clientes) {
 			OperacionesMapa.dibujarPuntos(c, mapa);
@@ -31,14 +35,15 @@ public class Controlador {
 		}
 	}
 	
-	public static void graficarMapaPorPromedios (JMapViewer mapa ) {
+	public static void graficarMapaPorPromedios ( ) {
 		
-		ArrayList<Centro> elegidos;
+		
 		
 		ComparadorPorPromedio comp = new ComparadorPorPromedio(clientes , centros);
 		elegidos= comp.solver(2);
+		GestorJSON.guardarCentrosElegidos(elegidos);
 		
-		graficarPunto(mapa);
+		graficarPuntos();
 		
 		HashMap<Centro, ArrayList<Cliente>> vecinos = comp.getVecinos();
 		
@@ -47,21 +52,39 @@ public class Controlador {
 		}
 		
 		for(Centro cn : vecinos.keySet()) {
+			OperacionesMapa.dibujarPuntoElegido(cn, mapa);
 			for(Cliente cl : vecinos.get(cn)) {
 				OperacionesMapa.dibujarLinea(cl, cn, mapa);
 			}
 		}
 	}
+	public static boolean esOpcion1(){
+		return opcion1;
+	}
+	public static void setEsOpcion1(boolean b) {
+		opcion1 = b;
+	}
+	
+	public static boolean esOpcion2(){
+		return opcion2;
+	}
+	public static void setEsOpcion2(boolean b) {
+		opcion2 = b;
+	}
+	public static void setMapa (JMapViewer m) {
+		mapa = m;
+	}
 	
 	
-public static void graficarMapaPorFuerzaBruta (JMapViewer mapa ) {
+public static void graficarMapaPorFuerzaBruta () {
 		
-		ArrayList<Centro> elegidos;
+	
 		
 		LocacionPorFuerzaBruta comp = new LocacionPorFuerzaBruta(clientes , centros);
 		elegidos= comp.resolver(2);
+		GestorJSON.guardarCentrosElegidos(elegidos);
 		
-		graficarPunto(mapa);
+		graficarPuntos();
 		
 		HashMap<Centro, ArrayList<Cliente>> vecinos = comp.getVecinos();
 		
@@ -70,6 +93,7 @@ public static void graficarMapaPorFuerzaBruta (JMapViewer mapa ) {
 		}
 		
 		for(Centro cn : vecinos.keySet()) {
+			OperacionesMapa.dibujarPuntoElegido(cn, mapa);
 			for(Cliente cl : vecinos.get(cn)) {
 				OperacionesMapa.dibujarLinea(cl, cn, mapa);
 			}

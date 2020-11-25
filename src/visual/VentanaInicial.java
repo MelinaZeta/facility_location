@@ -5,6 +5,7 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import java.awt.Color;
@@ -13,7 +14,7 @@ import java.awt.Dimension;
 import javax.swing.JLabel;
 
 import controlador.CambiadorDeVentanas;
-import controlador.Controlador;
+import controlador.ControladorMapa;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -50,13 +51,31 @@ public class VentanaInicial extends ModeloVentana {
 		JLabel titulo = createJLabel(panelInicial, "Facility Location", getColor(105, 105, 105), fuenteGothic(38), 454,
 				30, 401, 94);
 
+		JLabel cartelK = createJLabel(panelInicial, "Elija la cantidad de centros que desea abrir : ", 
+				getColor(105, 105, 105), fuenteGothic(20), 100,130, 500, 94);
+		
+		JTextField entradaK = createTextField(panelInicial, getColor(250, 250, 210), 600,130, 350, 50);
+		
+		JLabel cartelEleccion = createJLabel(panelInicial, "Elija algoritmo de distribucion de centros : ", 
+				getColor(105, 105, 105), fuenteGothic(20), 100,350, 500, 94);
+		
+		JButton btnHeuristica1 = createButton(panelInicial, "Ver mapa por promedio", 100, 450, 180,
+				80);
 
-		JButton btnVerMapa = createButton(panelInicial, "Ver mapa", 600, 450, 138,
-				67);
-
-		btnVerMapa.addActionListener(new ActionListener() {
+		btnHeuristica1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				cVent.cambiarAMapa();
+				ControladorMapa.graficarMapaPorPromedios();
+			}
+		});
+		
+		JButton btnFuerzaBruta = createButton(panelInicial, "Ver mapa por fuerza bruta", 400, 450, 200,
+				80);
+
+		btnFuerzaBruta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				cVent.cambiarAMapa();
+				ControladorMapa.graficarMapaPorFuerzaBruta();
 			}
 		});
 

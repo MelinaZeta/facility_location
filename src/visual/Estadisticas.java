@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import controlador.CambiadorDeVentanas;
-import controlador.Controlador;
+import controlador.ControladorMapa;
 
 public class Estadisticas extends ModeloVentana{
 

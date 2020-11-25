@@ -36,6 +36,21 @@ public class OperacionesMapa {
 		mapa.addMapMarker(mark);
 	}
 	
+	public static void dibujarPuntoElegido (ObjetoConCoordenadas obj, JMapViewer mapa) {
+		
+		double latitud = obj.getUbicacion().getLatitud();
+		double longitud = obj.getUbicacion().getLongitud();
+		
+		Coordinate coor = new Coordinate (latitud, longitud);
+		MapMarkerDot mark = new MapMarkerDot(obj.getNombre() , coor);
+		
+		mark.getStyle().setFont(new Font("Sitka Banner", java.awt.Font.PLAIN, 20));
+		
+		mark.getStyle().setBackColor(Color.yellow);
+
+		mapa.addMapMarker(mark);
+	}
+	
 	public static void dibujarPoligono (ArrayList<Cliente> clientesCercanos,JMapViewer mapa) {
 		ArrayList <Coordinate > coordenadas = new ArrayList<Coordinate>();
 		
@@ -45,7 +60,9 @@ public class OperacionesMapa {
 		
 		MapPolygonImpl poligono = new MapPolygonImpl(coordenadas);
 		
-//		poligono.getStyle().setBackColor(Color.cyan);
+		Color color = new Color(0x20202020, true);
+	    poligono.getStyle().setColor(color);
+	    poligono.getStyle().setBackColor(color);
 		mapa.addMapPolygon(poligono);	
 	}
 	
