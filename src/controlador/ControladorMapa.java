@@ -12,91 +12,59 @@ import logica.Cliente;
 import logica.ComparadorPorPromedio;
 import logica.LocacionPorFuerzaBruta;
 import logica.ObjetoConCoordenadas;
+import logica.Solvers;
 
 public class ControladorMapa {
-	
-	private static ArrayList<Cliente> clientes= GestorJSON.cargarClientesDesdeJSON();
-	private static ArrayList<Centro> centros=GestorJSON.cargarCentrosDesdeJSON();
-	public static boolean opcion1;
-	public static boolean opcion2;
+
+	private static ArrayList<Cliente> clientes = GestorJSON.cargarClientesDesdeJSON();
+	private static ArrayList<Centro> centros = GestorJSON.cargarCentrosDesdeJSON();
+	public static ComparadorPorPromedio solverProm = new ComparadorPorPromedio(clientes, centros);
+	public static LocacionPorFuerzaBruta solverFB = new LocacionPorFuerzaBruta(clientes, centros);
 	public static JMapViewer mapa;
 	public static ArrayList<Centro> elegidos;
-	
-	
-	public static void graficarPuntos ( ) {
-		
+
+	public static void graficarPuntos() {
+
 		for (Cliente c : clientes) {
 			OperacionesMapa.dibujarPuntos(c, mapa);
 		}
-		
-		for (Centro ce : centros ) {
-			
+
+		for (Centro ce : centros) {
+
 			OperacionesMapa.dibujarPuntos(ce, mapa);
 		}
 	}
-	
-	public static void graficarMapaPorPromedios ( ) {
-		
-		
-		
-		ComparadorPorPromedio comp = new ComparadorPorPromedio(clientes , centros);
-		elegidos= comp.solver(2);
+
+	public static void graficarMapa(Solvers solver, int k) {
+		elegidos = solver.resolver(k);
 		GestorJSON.guardarCentrosElegidos(elegidos);
-		
+
 		graficarPuntos();
-		
-		HashMap<Centro, ArrayList<Cliente>> vecinos = comp.getVecinos();
-		
+
+		HashMap<Centro, ArrayList<Cliente>> vecinos = solver.calcularCentrosCercanos();
+
 		for (ArrayList<Cliente> cl : vecinos.values()) {
 			OperacionesMapa.dibujarPoligono(cl, mapa);
 		}
-		
-		for(Centro cn : vecinos.keySet()) {
+
+		for (Centro cn : vecinos.keySet()) {
 			OperacionesMapa.dibujarPuntoElegido(cn, mapa);
-			for(Cliente cl : vecinos.get(cn)) {
+			for (Cliente cl : vecinos.get(cn)) {
 				OperacionesMapa.dibujarLinea(cl, cn, mapa);
 			}
 		}
 	}
-	public static boolean esOpcion1(){
-		return opcion1;
+
+	public static void graficarMapaPorPromedios(int k) {
+		graficarMapa(solverProm, k);
 	}
-	public static void setEsOpcion1(boolean b) {
-		opcion1 = b;
+
+	public static void graficarMapaPorFuerzaBruta(int k) {
+		graficarMapa(solverFB, k);
 	}
-	
-	public static boolean esOpcion2(){
-		return opcion2;
-	}
-	public static void setEsOpcion2(boolean b) {
-		opcion2 = b;
-	}
-	public static void setMapa (JMapViewer m) {
+
+	public static void setMapa(JMapViewer m) {
 		mapa = m;
 	}
-	
-	
-public static void graficarMapaPorFuerzaBruta () {
-		
-	
-		
-		LocacionPorFuerzaBruta comp = new LocacionPorFuerzaBruta(clientes , centros);
-		elegidos= comp.resolver(2);
-		GestorJSON.guardarCentrosElegidos(elegidos);
-		
-		graficarPuntos();
-		
-		HashMap<Centro, ArrayList<Cliente>> vecinos = comp.getVecinos();
-		
-		for (ArrayList<Cliente> cl : vecinos.values()) {
-			OperacionesMapa.dibujarPoligono(cl, mapa);
-		}
-		
-		for(Centro cn : vecinos.keySet()) {
-			OperacionesMapa.dibujarPuntoElegido(cn, mapa);
-			for(Cliente cl : vecinos.get(cn)) {
-				OperacionesMapa.dibujarLinea(cl, cn, mapa);
-			}
-		}
-	}
+
 }

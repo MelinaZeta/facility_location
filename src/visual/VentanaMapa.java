@@ -48,16 +48,7 @@ public class VentanaMapa
 	private void initialize() 
 	{
 		panelMapa.setBounds(0, 0, 1400,750);
-//		panelControles = new JPanel();
-//		panelControles.setBounds(457, 11, 242, 446);
-		//frame.getContentPane().add(panelControles);
-		
-	//	panelControles.setLayout(null);
-		
-//		dibujarPoligono();
-//		eliminar();
-//		dibujarCamino();		
-//		eliminarCamino();
+		panelMapa.setLayout(null);
 		
 		_mapa = new JMapViewer();
 		_mapa.setZoomControlsVisible(true);

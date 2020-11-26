@@ -65,7 +65,7 @@ public class VentanaInicial extends ModeloVentana {
 		btnHeuristica1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				cVent.cambiarAMapa();
-				ControladorMapa.graficarMapaPorPromedios();
+				ControladorMapa.graficarMapaPorPromedios(2);
 			}
 		});
 		
@@ -75,7 +75,7 @@ public class VentanaInicial extends ModeloVentana {
 		btnFuerzaBruta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				cVent.cambiarAMapa();
-				ControladorMapa.graficarMapaPorFuerzaBruta();
+				ControladorMapa.graficarMapaPorFuerzaBruta(2);
 			}
 		});
 

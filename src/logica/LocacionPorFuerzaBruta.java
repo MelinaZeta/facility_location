@@ -3,12 +3,13 @@ package logica;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class LocacionPorFuerzaBruta {
+public class LocacionPorFuerzaBruta implements Solvers {
 
 	private ArrayList<Cliente> clientes;
 	private ArrayList<Centro> centros;
 	private ArrayList<Centro> actual;
 	private ArrayList<Centro> elegidos;
+	private HashMap<Centro, ArrayList<Cliente>> centrosCercanosAClientes;
 
 	public LocacionPorFuerzaBruta(ArrayList<Cliente> clientes, ArrayList<Centro> centros) {
 		this.clientes = clientes;
@@ -29,15 +30,17 @@ public class LocacionPorFuerzaBruta {
 		// Son 2^n
 
 		generarDesde(k, 0);
-
+		
+		centrosCercanosAClientes = calcularCentrosCercanos();
 		return elegidos;
 	}
 
+	@SuppressWarnings("unchecked")
 	private void generarDesde(int cantLocaciones, int i) { // O(n^2*2^n)
 		
 		if (actual.size() == cantLocaciones || i>=centros.size()) {
 			if (costo(actual) < costo(elegidos)) {
-				elegidos = clonar(actual);
+				elegidos = (ArrayList<Centro>) actual.clone();
 			}
 			return;
 		}
@@ -57,76 +60,22 @@ public class LocacionPorFuerzaBruta {
 //		}
 	}
 
-	private Double costo(ArrayList<Centro> centrosActual) {
-		if(centrosActual == null || centrosActual.size()<1) {
-			return Double.POSITIVE_INFINITY;
-		}
-		ArrayList<Double> distanciasMinimas= new ArrayList<>();
-		double distMin;
-		double distActual;
-	
-		for(Cliente cl : clientes) {
-			distMin=cl.distancia(centrosActual.get(0));
-			for(Centro cn : centrosActual ) {				
-				distActual = cl.distancia(cn);
-				if(distActual<distMin) {
-					distMin= distActual;
-				}
-			}
-			distanciasMinimas.add(distMin);
-		}
-		double suma=0;
-		for(Double d : distanciasMinimas) {
-			suma+=d;
-		}
-		return suma;
+	@SuppressWarnings("unchecked")
+	@Override
+	public ArrayList<Cliente> getClientes() {
+		return (ArrayList<Cliente>) clientes.clone();
 	}
 
-	public Double costo() {
-		return costo(elegidos);
+	@SuppressWarnings("unchecked")
+	@Override
+	public ArrayList<Centro> getElegidos() {
+		return (ArrayList<Centro>) elegidos.clone();
 	}
-	
-	private ArrayList<Centro> clonar(ArrayList<Centro> actual2) {
-		ArrayList<Centro> nuevo = new ArrayList<Centro>();
-		for (Centro c : actual2) {
-			nuevo.add(c);
-		}
-		return nuevo;
-	}
-	
+
+	@SuppressWarnings("unchecked")
+	@Override
 	public HashMap<Centro, ArrayList<Cliente>> getVecinos() {
-
-		HashMap<Centro, ArrayList<Cliente>> vecinos = new HashMap<Centro, ArrayList<Cliente>>();
-
-		for (Cliente cl : clientes) {
-
-			Centro masCercano = centroMasCercano(cl);
-
-			if (vecinos.containsKey(masCercano)) {
-				vecinos.get(masCercano).add(cl);
-			} else {
-				vecinos.put(masCercano, new ArrayList<Cliente>());
-				vecinos.get(masCercano).add(cl);
-			}
-		}
-
-		return vecinos;
-	}
-	
-	public Centro centroMasCercano(Cliente c) {
-		double distMin = Double.POSITIVE_INFINITY;
-		double distActual;
-		Centro centroRet = new Centro(null, "");
-
-		for (Centro cn : elegidos) {
-			distActual = c.distancia(cn);
-			if (distActual < distMin) {
-				distMin = distActual;
-				centroRet = cn;
-			}
-		}
-
-		return centroRet;
+		return (HashMap<Centro, ArrayList<Cliente>>) centrosCercanosAClientes.clone();
 	}
 
 }
