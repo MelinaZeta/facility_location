@@ -78,5 +78,69 @@ public interface Solvers {
 	default Double costo() {
 		return costo(getElegidos());
 	}
-
+	
+	default String distMaxima() {
+		double distMaxima =  0;
+		double distActual = 0;
+		String centroN = "";
+		String clienteN = "";
+		for (Centro cn : getVecinos().keySet()) {
+			for (Cliente c : getVecinos().get(cn)) {
+				distActual = cn.distancia(c);
+				if (distActual > distMaxima) {
+					centroN = cn.getNombre();
+					clienteN = c.getNombre();
+					distMaxima = distActual;
+				}
+			}
+		}
+		
+		return "La distancia maxima es de :" + distMaxima + " entre "+ centroN + " y " + clienteN;
+	}
+	
+	default String distMin() {
+		double distMin = Double.POSITIVE_INFINITY;
+		double distActual = 0;
+		String centroN = "";
+		String clienteN = "";
+		for (Centro cn : getVecinos().keySet()) {
+			for (Cliente c : getVecinos().get(cn)) {
+				distActual = cn.distancia(c);
+				if (distActual < distMin) {
+					centroN = cn.getNombre();
+					clienteN = c.getNombre();
+					distMin = distActual;
+				}
+			}
+		}
+		
+		return "La distancia minima es de :" + distMin + " entre "+ centroN + " y " + clienteN;
+	}
+	
+	default ArrayList<String> cantClientes () {
+		ArrayList<String> cant = new ArrayList<String>();
+		
+		for (Centro cn : getVecinos().keySet()) {
+			cant.add(cn.getNombre() + "tiene " + getVecinos().get(cn).size() + " clientes");
+		}
+		
+		return cant;
+	}
+	
+	default double promedioDistanciaCliente () {
+		
+		return costo() / getClientes().size(); 
+	}
+	
+	default double promedioDistanciaCentro () {
+		double suma =0 ; 
+		for (Centro cn : getElegidos()) {
+			for ( Centro cn2 : getElegidos()) {
+				suma += cn.distancia(cn2); 
+			}
+		}
+		suma = suma / 2;
+		return suma / getElegidos().size(); 
+	}
+	
 }

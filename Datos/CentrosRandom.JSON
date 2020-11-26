@@ -2,36 +2,36 @@
   "centros": [
     {
       "ubicacion": {
-        "latitud": 16.538398935236415,
-        "longitud": -178.57283689145197
+        "latitud": 6.4146398953925265,
+        "longitud": -120.33386909754165
       },
       "nombre": "B"
     },
     {
       "ubicacion": {
-        "latitud": 10.075238935786192,
-        "longitud": 57.40550317488537
+        "latitud": -61.48920579907193,
+        "longitud": -7.2945569106013775
       },
       "nombre": "B"
     },
     {
       "ubicacion": {
-        "latitud": 10.225812476364846,
-        "longitud": 4.250376766218968
+        "latitud": -39.99147449445051,
+        "longitud": 179.19745110731265
       },
       "nombre": "B"
     },
     {
       "ubicacion": {
-        "latitud": 88.28978493571931,
-        "longitud": 146.39412381336163
+        "latitud": -64.495648671435,
+        "longitud": 176.37944944067138
       },
       "nombre": "B"
     },
     {
       "ubicacion": {
-        "latitud": -63.78277112127158,
-        "longitud": 104.63212968793428
+        "latitud": -23.18713789637972,
+        "longitud": 161.67967133448684
       },
       "nombre": "B"
     }

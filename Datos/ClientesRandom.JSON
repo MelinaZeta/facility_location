@@ -2,71 +2,71 @@
   "clientes": [
     {
       "ubicacion": {
-        "latitud": 54.821037244192,
-        "longitud": 122.3921618477214
+        "latitud": 63.47417239166968,
+        "longitud": 89.83219722793072
       },
       "nombre": "A"
     },
     {
       "ubicacion": {
-        "latitud": -34.224023602432254,
-        "longitud": 48.33681180294714
+        "latitud": -20.23895733067848,
+        "longitud": -11.163761975027624
       },
       "nombre": "A"
     },
     {
       "ubicacion": {
-        "latitud": -73.08537245889494,
-        "longitud": 74.60097619922952
+        "latitud": -29.62437690273149,
+        "longitud": 79.29232259533795
       },
       "nombre": "A"
     },
     {
       "ubicacion": {
-        "latitud": -68.24303875928926,
-        "longitud": -94.54440955863468
+        "latitud": 50.183273416309156,
+        "longitud": 113.71381230793016
       },
       "nombre": "A"
     },
     {
       "ubicacion": {
-        "latitud": -14.47550659561698,
-        "longitud": 51.77156465253792
+        "latitud": -77.59919180956416,
+        "longitud": -159.06432738394912
       },
       "nombre": "A"
     },
     {
       "ubicacion": {
-        "latitud": -44.11243472596379,
-        "longitud": 37.327467488028184
+        "latitud": 56.23793177721744,
+        "longitud": -130.53009840871755
       },
       "nombre": "A"
     },
     {
       "ubicacion": {
-        "latitud": -5.635358407087954,
-        "longitud": 174.18614795160244
+        "latitud": 4.95355565410776,
+        "longitud": 156.14800259171514
       },
       "nombre": "A"
     },
     {
       "ubicacion": {
-        "latitud": 33.90553528622612,
-        "longitud": 92.10333876749716
+        "latitud": -59.13372663398516,
+        "longitud": -106.0295067130885
       },
       "nombre": "A"
     },
     {
       "ubicacion": {
-        "latitud": 35.966976692300605,
-        "longitud": 56.02569821625218
+        "latitud": 5.505536585806121,
+        "longitud": 113.8059406323978
       },
       "nombre": "A"
     },
     {
       "ubicacion": {
-        "latitud": -41.33512503167055,
-        "longitud": 115.92642159184633
+        "latitud": 86.23298219551735,
+        "longitud": -114.4190475259335
       },
       "nombre": "A"
     }

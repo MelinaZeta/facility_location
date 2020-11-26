@@ -12,15 +12,17 @@ import org.openstreetmap.gui.jmapviewer.MapPolygonImpl;
 import controlador.CambiadorDeVentanas;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 import java.awt.event.ActionListener;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import controlador.ControladorMapa;
 
-public class VentanaMapa 
+public class VentanaMapa extends ModeloVentana
 {
 	private CambiadorDeVentanas cVent;
 	private JPanel panelMapa;
@@ -52,7 +54,7 @@ public class VentanaMapa
 		
 		_mapa = new JMapViewer();
 		_mapa.setZoomControlsVisible(true);
-		_mapa.setSize(1300, 650);
+		_mapa.setSize(1400, 650);
 		
 		Coordinate coordinate = new Coordinate(-34.521, -58.7008);
 		_mapa.setDisplayPosition(coordinate, 10);
@@ -61,7 +63,31 @@ public class VentanaMapa
 		//para desplazarnos en el mapa
 		DefaultMapController mapController = new DefaultMapController(_mapa);
 	    mapController.setMovementMouseButton(MouseEvent.BUTTON1);
-		
+	    
+	    //JLabel hola = createJLabel(panelMapa, "hola mundo ", Color.black, fuenteGothic(20), 100, 570, 200, 200);
+	    
+	    JButton btnVolverInicio = createButton(panelMapa, "Volver al Inicio", 90, 670, 150, 50);
+	    btnVolverInicio.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent arg0) 
+			{
+			cVent.cambiarAInicial();	
+				
+			}
+		});
+	    
+	    JButton btnEstadisticas = createButton(panelMapa, "Estadisticas", 1050, 670, 150, 50);
+	    
+	    btnEstadisticas.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent arg0) 
+			{
+			cVent.cambiarAEstadisticas();	
+				
+			}
+		});
+	    
+	    
 		panelMapa.add(_mapa);
 		
 		ControladorMapa.setMapa(_mapa);
