@@ -15,7 +15,6 @@ import logica.ObjetoConCoordenadas;
 import logica.Solvers;
 
 public class ControladorMapa {
-
 	private static ArrayList<Cliente> clientes = GestorJSON.cargarClientesDesdeJSON();
 	private static ArrayList<Centro> centros = GestorJSON.cargarCentrosDesdeJSON();
 	public static ComparadorPorPromedio solverProm = new ComparadorPorPromedio(clientes, centros);
@@ -57,10 +56,12 @@ public class ControladorMapa {
 
 	public static void graficarMapaPorPromedios(int k) {
 		graficarMapa(solverProm, k);
+		ControladorEstadisticas.setSolver(solverProm);
 	}
 
 	public static void graficarMapaPorFuerzaBruta(int k) {
 		graficarMapa(solverFB, k);
+		ControladorEstadisticas.setSolver(solverFB);
 	}
 
 	public static void setMapa(JMapViewer m) {

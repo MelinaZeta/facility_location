@@ -19,11 +19,15 @@
 - [x] Establecer una interface visual
 - [x] Implementar JMapViewer
 - [x] Comunicar la interface con el código de negocio
-- [ ] Mostrar estadísticas 
-- [ ] Interfaz ( ventana inicial, estadisticas y nombre de clientes y centros ) 
+- [x] Mostrar estadísticas 
+- [x] Interfaz ( ventana inicial, estadisticas y nombre de clientes y centros ) 
 - [ ] Buscar centros y clientes que queden relativamente bien 
-- [ ] Señalar cuales son los centros elegidos 
-- [ ] Poner el mapa en pantalla completa 
-- [ ] Agregar botones de heuristicas 
-- [ ] Mostrar cuanto sale abrir los centros segun el algoritmo goloso 
+- [x] Señalar cuales son los centros elegidos 
+- [x] Poner el mapa en pantalla completa 
+- [x] Agregar botones de heuristicas 
+- [x] Mostrar cuanto sale abrir los centros segun el algoritmo goloso 
 - [x] Escribir en un JSON los centros elegidos
+- [ ] Creditos en ventana inicial
+- [ ] Referencia de los colores en ventana mapa
+- [ ] Fondo a las ventanas
+- [ ] Ventana estadisticas mejorarla

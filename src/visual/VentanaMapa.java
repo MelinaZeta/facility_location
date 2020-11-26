@@ -10,6 +10,7 @@ import org.openstreetmap.gui.jmapviewer.MapMarkerDot;
 import org.openstreetmap.gui.jmapviewer.MapPolygonImpl;
 
 import controlador.CambiadorDeVentanas;
+import controlador.ControladorEstadisticas;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -83,6 +84,7 @@ public class VentanaMapa extends ModeloVentana
 			public void actionPerformed(ActionEvent arg0) 
 			{
 			cVent.cambiarAEstadisticas();	
+			
 				
 			}
 		});

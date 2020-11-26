@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import controlador.CambiadorDeVentanas;
+import controlador.ControladorEstadisticas;
 
 import javax.swing.JPanel;
 
@@ -104,7 +105,7 @@ public class Main {
 
 		panelEstadisticas.setEnabled(true);
 		panelEstadisticas.setVisible(true);
-		ventanaEstadisticas.mostrarEstadisticasGrupo1();
+		ControladorEstadisticas.crearEstadisticas(panelEstadisticas);
 	}
 
 }

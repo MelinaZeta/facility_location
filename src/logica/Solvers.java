@@ -36,7 +36,7 @@ public interface Solvers {
 			for (Double d : distanciasMinimas) {
 				suma += d;
 			}
-			return suma;
+			return redondear(suma);
 		}
 	}
 
@@ -95,7 +95,7 @@ public interface Solvers {
 			}
 		}
 		
-		return "La distancia maxima es de :" + distMaxima + " entre "+ centroN + " y " + clienteN;
+		return "La distancia maxima es de :" + redondear(distMaxima) + " entre "+ centroN + " y " + clienteN;
 	}
 	
 	default String distMin() {
@@ -114,7 +114,7 @@ public interface Solvers {
 			}
 		}
 		
-		return "La distancia minima es de :" + distMin + " entre "+ centroN + " y " + clienteN;
+		return "La distancia minima es de :" + redondear(distMin) + " entre "+ centroN + " y " + clienteN;
 	}
 	
 	default ArrayList<String> cantClientes () {
@@ -129,7 +129,7 @@ public interface Solvers {
 	
 	default double promedioDistanciaCliente () {
 		
-		return costo() / getClientes().size(); 
+		return redondear(costo() / getClientes().size()); 
 	}
 	
 	default double promedioDistanciaCentro () {
@@ -140,7 +140,12 @@ public interface Solvers {
 			}
 		}
 		suma = suma / 2;
-		return suma / getElegidos().size(); 
+		return redondear (suma / getElegidos().size()); 
+	}
+	
+	default double redondear (double dob) {
+		return  Math.floor(dob * 100)/100;
+		
 	}
 	
 }
