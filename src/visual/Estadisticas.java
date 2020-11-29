@@ -54,20 +54,10 @@ public class Estadisticas extends ModeloVentana{
 
 		JButton volver = createButton(panelEstadisticas, "Volver al menu principal", 720,
 				617, 189, 40);
-		volver.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				cVent.cambiarAInicial();
-			}
-		});
+		volver.addActionListener( e -> cVent.cambiarAInicial());
 
 		JButton guardar = createButton(panelEstadisticas, "Volver al mapa", 200, 617, 189, 40);
-		guardar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {				
-				cVent.cambiarAMapa();
-				;
-
-			}
-		});
+		guardar.addActionListener( e -> cVent.cambiarAMapa());
 
 		panelEstadisticas.setVisible(false);
 		
