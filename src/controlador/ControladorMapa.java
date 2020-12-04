@@ -67,5 +67,37 @@ public class ControladorMapa {
 	public static void setMapa(JMapViewer m) {
 		mapa = m;
 	}
+	
+	public static String revisarK (String entrada) {
+		try
+	    {
+	      // the String to int conversion happens here
+	      int k = Integer.parseInt(entrada.trim());
+	 
+	      // print out the value after the conversion
+	      System.out.println("int i = " + k);
+	      
+	  	if (k <= 0) {
+			return "no se pueden abrir centros negativos";
+		}
+		if (k > centros.size()) {
+			return "usted no tiene tantos centros";
+		}
+		
+	    }
+	    catch (NumberFormatException nfe)
+	    {
+	      return "no escribas pavadas";
+	    }
+	  
+		
+		return "";
+		
+		
+	}
+	
+	public int castearK(String entrada) {
+		 return Integer.parseInt(entrada.trim());
+	}
 
 }

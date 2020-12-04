@@ -16,18 +16,34 @@ public class ComparadorPorPromedio implements Solvers {
 	public ComparadorPorPromedio(ArrayList<Cliente> clientes, ArrayList<Centro> centros) {
 		this.clientes = clientes;
 		this.centros = centros;
-		this.centrosClonados = (ArrayList<Centro>) centros.clone();
+		
 	}
 
+	@SuppressWarnings("unchecked")
 	public ArrayList<Centro> resolver(int k) { // recibe la cantidad de centros
 		ArrayList<Double> promedios = promedio();
 		ArrayList<Centro> centrosRet = new ArrayList<Centro>();
+		this.centrosClonados = (ArrayList<Centro>) centros.clone();
+		int indiceMin =0;
 
-		Collections.sort(promedios); // ordena de menor a mayor
+		if (k > centros.size()) {
+			throw new IllegalArgumentException("no se pueden elegir mas centros de los que hay disponible");
+		}
+		
+		if (k < 0) {
+			throw new IllegalArgumentException("no puede elegir centros negativos");
+		}
+		
+		if (k == centros.size()) {
+			elegidos = (ArrayList<Centro>) centros.clone();
+			return (ArrayList<Centro>) centros.clone();
+		}
+		
 		for (int i = 0; i < k; i++) {
-			centrosRet.add(centrosClonados.get(0));
-			centrosClonados.remove(0);
-			promedios.remove(0);
+			indiceMin = dameIndiceMenor(promedios);
+			centrosRet.add(centrosClonados.get(indiceMin));
+			centrosClonados.remove(indiceMin);
+			promedios.remove(indiceMin);
 		}
 		elegidos = centrosRet;
 		
@@ -35,7 +51,21 @@ public class ComparadorPorPromedio implements Solvers {
 		
 		return centrosRet;
 	}
-
+	
+	
+	;
+	
+	
+	private int dameIndiceMenor (ArrayList <Double> promedios) {
+		int indiceMin = 0;
+		
+		for (int i = 0; i < promedios.size(); i++) {
+			if (promedios.get(indiceMin) > promedios.get(i)) {
+				indiceMin = i;
+			}
+		}
+		return indiceMin;
+	}
 	private ArrayList<Double> promedio() {
 		ArrayList<Double> promedios = new ArrayList<Double>();
 		double sumaDistancia = 0;

@@ -42,10 +42,10 @@ public class Estadisticas extends ModeloVentana{
 	 */
 	private void initialize() {
 
-		panelEstadisticas.setBounds(0, 0, 1385, 750);
+		panelEstadisticas.setBounds(0, 0, 1400, 750);
 		panelEstadisticas.setBorder(null);
 		panelEstadisticas.setLayout(null);
-		panelEstadisticas.setBackground(new java.awt.Color(250, 250, 210));
+		//panelEstadisticas.setBackground(new java.awt.Color(250, 250, 210));
 
 		// Crea los JLABEL
 		createJLabel(panelEstadisticas, "Estadisticas", getColor(105, 105, 105),
@@ -59,7 +59,7 @@ public class Estadisticas extends ModeloVentana{
 		JButton guardar = createButton(panelEstadisticas, "Volver al mapa", 200, 617, 189, 40);
 		guardar.addActionListener( e -> cVent.cambiarAMapa());
 
-		panelEstadisticas.setVisible(false);
+		//panelEstadisticas.setVisible(false);
 		
 	}
 

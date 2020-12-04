@@ -15,9 +15,11 @@ public class Main {
 	private VentanaInicial ventanaInicial;
 	private VentanaMapa ventanaMapa;
 	private Estadisticas ventanaEstadisticas;
-	private JPanel panelInicial;
+	private Fondo panelInicial;
 	private JPanel panelMapa;
-	private JPanel panelEstadisticas;
+	private Fondo panelEstadisticas;
+	
+
 
 	/**
 	 * Launch the application.
@@ -57,11 +59,19 @@ public class Main {
 
 		frame.setVisible(true);
 
-		panelInicial = new JPanel();
+		panelInicial = new Fondo();
 
 		panelMapa = new JPanel();
 
-		panelEstadisticas = new JPanel();
+		panelEstadisticas = new Fondo();
+		
+		
+		
+		
+		
+		//frame.getContentPane().add(f);
+		
+		
 
 		frame.getContentPane().add(panelInicial);
 		frame.getContentPane().add(panelMapa);
@@ -74,7 +84,7 @@ public class Main {
 		ventanaMapa = new VentanaMapa(panelMapa, cVent);
 
 		ventanaEstadisticas = new Estadisticas(panelEstadisticas, cVent);
-
+		
 		cVent.cambiarAInicial();
 	}
 
