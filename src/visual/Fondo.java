@@ -21,12 +21,12 @@ public class Fondo extends JPanel  {
 	      
 		  	
 					
-	    	imagen = new ImageIcon("Fondos/fondo.jpg");
+	    	imagen = new ImageIcon("Fondos/fondo7.jpg");
 							
 	   
 	    	
 	    	g.drawImage(imagen.getImage(),0,0, 1400,750,null );
-	    	
+	   
 	    	
 	    	super.paint(g);
 
