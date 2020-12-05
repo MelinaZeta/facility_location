@@ -52,7 +52,7 @@ public class VentanaMapa extends ModeloVentana {
 
 		_mapa = new JMapViewer();
 		_mapa.setZoomControlsVisible(true);
-		_mapa.setSize(1200, 630);
+		_mapa.setSize(1150, 630);
 
 		Coordinate coordinate = new Coordinate(-34.521, -58.7008);
 		_mapa.setDisplayPosition(coordinate, 10);
@@ -61,8 +61,6 @@ public class VentanaMapa extends ModeloVentana {
 		DefaultMapController mapController = new DefaultMapController(_mapa);
 		mapController.setMovementMouseButton(MouseEvent.BUTTON1);
 
-		// JLabel hola = createJLabel(panelMapa, "hola mundo ", Color.black,
-		// fuenteGothic(20), 100, 570, 200, 200);
 
 		JButton btnVolverInicio = createButton(panelMapa, "Volver al Inicio", 90, 650, 150, 50);
 		btnVolverInicio.addActionListener(e -> cVent.cambiarAInicial());
@@ -71,16 +69,16 @@ public class VentanaMapa extends ModeloVentana {
 		btnEstadisticas.addActionListener(e -> cVent.cambiarAEstadisticas());
 		
 		JLabel label_refe = createJLabel(panelMapa, "REFERENCIAS", getColor(0, 0, 0),
-				fuenteSitka(20), 1210, 20, 150, 126);
+				fuenteSitka(25), 1160, 20, 150, 126);
 		
-		JLabel refe_amarillo = createJLabel(panelMapa, "Clientes", getColor(0, 0, 255),
-				fuenteSitka(16), 1210, 80, 150, 126);
+		JLabel refe_verde = createJLabel(panelMapa, " (*) CENTROS ELEGIDOS", getColor(0, 255, 0),
+				fuenteSitka(18), 1160, 80, 200, 126);
 		
-		JLabel refe_rojo = createJLabel(panelMapa, "Centros elegidos", getColor(255, 255, 0),
-				fuenteSitka(16), 1210, 140, 150, 126);
+		JLabel refe_rojo = createJLabel(panelMapa, " (*) CENTROS NO ELEGIDOS", getColor(255, 0, 0),
+				fuenteSitka(18), 1160, 140, 220, 126);
 		
-		JLabel refe_azul = createJLabel(panelMapa, "Centros no elegidos", getColor(255, 0, 0),
-				fuenteSitka(16), 1210, 200, 150, 126);
+		JLabel refe_azul = createJLabel(panelMapa, " (*) CLIENTES", getColor(0, 0, 255),
+				fuenteSitka(18), 1160, 200, 180, 126);
 
 		panelMapa.add(_mapa);
 

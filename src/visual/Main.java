@@ -16,7 +16,7 @@ public class Main {
 	private VentanaMapa ventanaMapa;
 	private Estadisticas ventanaEstadisticas;
 	private Fondo panelInicial;
-	private JPanel panelMapa;
+	private Fondo panelMapa;
 	private Fondo panelFinal;
 	private JPanel panelEstadisticas;
 	
@@ -60,7 +60,7 @@ public class Main {
 
 		panelInicial = new Fondo();
 
-		panelMapa = new JPanel();
+		panelMapa = new Fondo();
 
 		panelFinal = new Fondo();
 		

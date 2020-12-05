@@ -46,7 +46,7 @@ public class OperacionesMapa {
 		
 		mark.getStyle().setFont(new Font("Sitka Banner", java.awt.Font.PLAIN, 20));
 		
-		mark.getStyle().setBackColor(Color.yellow);
+		mark.getStyle().setBackColor(Color.green);
 
 		mapa.addMapMarker(mark);
 	}
