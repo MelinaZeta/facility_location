@@ -16,7 +16,6 @@ public class ControladorEstadisticas {
 
 	public static Double costoTotal() {
 		return solver.costo();
-
 	}
 
 	public static Font fuenteGothic(int tamanio) {
@@ -38,43 +37,30 @@ public class ControladorEstadisticas {
 	}
 
 	public static void crearEstadisticas(JPanel panelEstadisticas) {
+		panelEstadisticas.removeAll();
 		createJLabel(panelEstadisticas, "El costo total es : " + ControladorEstadisticas.costoTotal(),
-				getColor(0, 0, 0), fuenteGothic(22), 28, 167, 1100, 126);
+				getColor(0, 0, 0), fuenteGothic(22), 28, 0, 1100, 50);
 
 		createJLabel(panelEstadisticas, "Los centros elegidos son :" + ControladorEstadisticas.centrosElegidos(),
-				getColor(0, 0, 0), fuenteGothic(22), 28, 207, 1100, 126);
+				getColor(0, 0, 0), fuenteGothic(22), 28, 50, 1100, 50);
 
 		createJLabel(panelEstadisticas, "La distancia máxima es : " + ControladorEstadisticas.distanciaMaxima(),
-				getColor(0, 0, 0), fuenteGothic(22), 28, 247, 1100, 126);
+				getColor(0, 0, 0), fuenteGothic(22), 28, 100, 1100, 50);
 
 		createJLabel(panelEstadisticas, "La distancia mínima es : " + ControladorEstadisticas.distanciaMinima(),
-				getColor(0, 0, 0), fuenteGothic(22), 28, 287, 1100, 126);
+				getColor(0, 0, 0), fuenteGothic(22), 28, 150, 1100, 50);
 
 		createJLabel(panelEstadisticas, "La cantidad de clientes es : " + ControladorEstadisticas.cantidadClientes(),
-				getColor(0, 0, 0), fuenteGothic(22), 28, 327, 1100, 126);
+				getColor(0, 0, 0), fuenteGothic(22), 28, 200, 1100, 50);
 
 		createJLabel(panelEstadisticas,
 				"La distancia promedio de clientes es : " + ControladorEstadisticas.distanciaPromedioClientes(),
-				getColor(0, 0, 0), fuenteGothic(22), 28, 367, 1100, 126);
+				getColor(0, 0, 0), fuenteGothic(22), 28, 250, 1100, 50);
 
 		createJLabel(panelEstadisticas,
 				"La distancia promedio de centros es : " + ControladorEstadisticas.distanciaPromedioCentros(),
-				getColor(0, 0, 0), fuenteGothic(22), 28, 407, 1100, 126);
+				getColor(0, 0, 0), fuenteGothic(22), 28, 300, 1100, 126);
 	}
-
-//	public static tiempo(){	
-	// long inicio = System.currentTimeMillis();
-////
-////        Solver solver = new Solver(aleatorio(n));
-////
-////        solver.resolver();
-////        long fin= System.currentTimeMillis();
-////
-////        double tiempo = (fin-inicio)/1000.0;
-////
-////        System.out.println("n = "+n+": "+ tiempo+" seg.");
-//		
-//	}
 
 	public static ArrayList<Centro> centrosElegidos() {
 		return solver.getElegidos();

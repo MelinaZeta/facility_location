@@ -30,12 +30,13 @@ public class ComparadorPorPromedio implements Solvers {
 			throw new IllegalArgumentException("no se pueden elegir mas centros de los que hay disponible");
 		}
 		
-		if (k < 0) {
+		if (k < 1) {
 			throw new IllegalArgumentException("no puede elegir centros negativos");
 		}
 		
 		if (k == centros.size()) {
 			elegidos = (ArrayList<Centro>) centros.clone();
+			centrosCercanosAClientes = calcularCentrosCercanos();
 			return (ArrayList<Centro>) centros.clone();
 		}
 		
@@ -51,9 +52,6 @@ public class ComparadorPorPromedio implements Solvers {
 		
 		return centrosRet;
 	}
-	
-	
-	;
 	
 	
 	private int dameIndiceMenor (ArrayList <Double> promedios) {

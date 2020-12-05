@@ -17,10 +17,9 @@ public class Main {
 	private Estadisticas ventanaEstadisticas;
 	private Fondo panelInicial;
 	private JPanel panelMapa;
-	private Fondo panelEstadisticas;
+	private Fondo panelFinal;
+	private JPanel panelEstadisticas;
 	
-
-
 	/**
 	 * Launch the application.
 	 */
@@ -63,19 +62,20 @@ public class Main {
 
 		panelMapa = new JPanel();
 
-		panelEstadisticas = new Fondo();
+		panelFinal = new Fondo();
 		
-		
-		
-		
-		
-		//frame.getContentPane().add(f);
+		panelEstadisticas = new JPanel();
+		panelEstadisticas.setBounds(100,150, 1100, 350);
+		panelEstadisticas.setBorder(null);
+		panelEstadisticas.setLayout(null);
+		panelEstadisticas.setVisible(true);
 		
 		
 
 		frame.getContentPane().add(panelInicial);
 		frame.getContentPane().add(panelMapa);
-		frame.getContentPane().add(panelEstadisticas);
+		frame.getContentPane().add(panelFinal);
+		panelFinal.add(panelEstadisticas);
 
 		CambiadorDeVentanas cVent = new CambiadorDeVentanas(this);
 
@@ -83,7 +83,7 @@ public class Main {
 
 		ventanaMapa = new VentanaMapa(panelMapa, cVent);
 
-		ventanaEstadisticas = new Estadisticas(panelEstadisticas, cVent);
+		ventanaEstadisticas = new Estadisticas(panelFinal, cVent);
 		
 		cVent.cambiarAInicial();
 	}
@@ -93,8 +93,8 @@ public class Main {
 		panelInicial.setEnabled(false);
 		panelMapa.setVisible(false);
 		panelMapa.setEnabled(false);
-		panelEstadisticas.setVisible(false);
-		panelEstadisticas.setEnabled(false);
+		panelFinal.setVisible(false);
+		panelFinal.setEnabled(false);
 	}
 
 	public void cambiarAInicial() {
@@ -113,8 +113,8 @@ public class Main {
 	public void cambiarAEstadisticas() {
 		ocultarPaneles();
 
-		panelEstadisticas.setEnabled(true);
-		panelEstadisticas.setVisible(true);
+		panelFinal.setEnabled(true);
+		panelFinal.setVisible(true);
 		ControladorEstadisticas.crearEstadisticas(panelEstadisticas);
 	}
 

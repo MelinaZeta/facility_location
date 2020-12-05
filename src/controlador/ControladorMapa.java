@@ -35,6 +35,7 @@ public class ControladorMapa {
 	}
 
 	public static void graficarMapa(Solvers solver, int k) {
+		OperacionesMapa.resetearMapa(mapa);
 		elegidos = solver.resolver(k);
 		GestorJSON.guardarCentrosElegidos(elegidos);
 
@@ -47,10 +48,13 @@ public class ControladorMapa {
 		}
 
 		for (Centro cn : vecinos.keySet()) {
-			OperacionesMapa.dibujarPuntoElegido(cn, mapa);
 			for (Cliente cl : vecinos.get(cn)) {
 				OperacionesMapa.dibujarLinea(cl, cn, mapa);
 			}
+		}
+		
+		for (Centro cen : elegidos) {
+			OperacionesMapa.dibujarPuntoElegido(cen, mapa);
 		}
 	}
 
@@ -73,9 +77,6 @@ public class ControladorMapa {
 	    {
 	      // the String to int conversion happens here
 	      int k = Integer.parseInt(entrada.trim());
-	 
-	      // print out the value after the conversion
-	      System.out.println("int i = " + k);
 	      
 	  	if (k <= 0) {
 			return "no se pueden abrir centros negativos";

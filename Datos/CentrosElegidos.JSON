@@ -2,17 +2,17 @@
   "centros": [
     {
       "ubicacion": {
+        "latitud": -34.65,
+        "longitud": -58.566667
+      },
+      "nombre": "Centro A"
+    },
+    {
+      "ubicacion": {
         "latitud": -34.500148,
         "longitud": -58.681064
       },
       "nombre": "Centro D"
-    },
-    {
-      "ubicacion": {
-        "latitud": -34.533333,
-        "longitud": -58.716667
-      },
-      "nombre": "Centro B"
     }
   ]
 }

@@ -71,7 +71,7 @@ public class Centro implements ObjetoConCoordenadas {
 
 	@Override
 	public String toString() {
-		return "Centro nombre :" + this.nombre + "ubicacion=" + ubicacion;
+		return this.nombre + "  ";
 	}
 
 	@Override

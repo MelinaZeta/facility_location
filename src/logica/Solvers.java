@@ -121,7 +121,7 @@ public interface Solvers {
 		ArrayList<String> cant = new ArrayList<String>();
 		
 		for (Centro cn : getVecinos().keySet()) {
-			cant.add(cn.getNombre() + "tiene " + getVecinos().get(cn).size() + " clientes");
+			cant.add(cn.getNombre() + " tiene " + getVecinos().get(cn).size() + " clientes");
 		}
 		
 		return cant;

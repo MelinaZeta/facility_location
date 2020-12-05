@@ -75,7 +75,7 @@ public class Cliente implements ObjetoConCoordenadas {
 
 	@Override
 	public String toString() {
-		return "Cliente nombre :" + this.nombre + "ubicacion=" + ubicacion;
+		return this.nombre + "  ";
 	}
 
 	@Override
