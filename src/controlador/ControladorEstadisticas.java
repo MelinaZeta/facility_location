@@ -39,27 +39,27 @@ public class ControladorEstadisticas {
 
 	public static void crearEstadisticas(JPanel panelEstadisticas) {
 		createJLabel(panelEstadisticas, "El costo total es : " + ControladorEstadisticas.costoTotal(),
-				getColor(105, 105, 105), fuenteGothic(22), 28, 167, 1100, 126);
+				getColor(0, 0, 0), fuenteGothic(22), 28, 167, 1100, 126);
 
 		createJLabel(panelEstadisticas, "Los centros elegidos son :" + ControladorEstadisticas.centrosElegidos(),
-				getColor(105, 105, 105), fuenteGothic(22), 28, 207, 1100, 126);
+				getColor(0, 0, 0), fuenteGothic(22), 28, 207, 1100, 126);
 
 		createJLabel(panelEstadisticas, "La distancia máxima es : " + ControladorEstadisticas.distanciaMaxima(),
-				getColor(105, 105, 105), fuenteGothic(22), 28, 247, 1100, 126);
+				getColor(0, 0, 0), fuenteGothic(22), 28, 247, 1100, 126);
 
 		createJLabel(panelEstadisticas, "La distancia mínima es : " + ControladorEstadisticas.distanciaMinima(),
-				getColor(105, 105, 105), fuenteGothic(22), 28, 287, 1100, 126);
+				getColor(0, 0, 0), fuenteGothic(22), 28, 287, 1100, 126);
 
 		createJLabel(panelEstadisticas, "La cantidad de clientes es : " + ControladorEstadisticas.cantidadClientes(),
-				getColor(105, 105, 105), fuenteGothic(22), 28, 327, 1100, 126);
+				getColor(0, 0, 0), fuenteGothic(22), 28, 327, 1100, 126);
 
 		createJLabel(panelEstadisticas,
 				"La distancia promedio de clientes es : " + ControladorEstadisticas.distanciaPromedioClientes(),
-				getColor(105, 105, 105), fuenteGothic(22), 28, 367, 1100, 126);
+				getColor(0, 0, 0), fuenteGothic(22), 28, 367, 1100, 126);
 
 		createJLabel(panelEstadisticas,
 				"La distancia promedio de centros es : " + ControladorEstadisticas.distanciaPromedioCentros(),
-				getColor(105, 105, 105), fuenteGothic(22), 28, 407, 1100, 126);
+				getColor(0, 0, 0), fuenteGothic(22), 28, 407, 1100, 126);
 	}
 
 //	public static tiempo(){	

@@ -60,20 +60,20 @@ public class VentanaInicial extends ModeloVentana {
 		
 		
 
-		JLabel titulo = createJLabel(panelInicial, "Facility Location", getColor(105, 105, 105), fuenteGothic(38), 454,
+		JLabel titulo = createJLabel(panelInicial, "Facility Location", getColor(0, 0, 0), fuenteGothic(38), 454,
 				30, 401, 94);
 
 		JLabel cartelK = createJLabel(panelInicial, "Elija la cantidad de centros que desea abrir : ",
-				getColor(105, 105, 105), fuenteGothic(20), 100, 130, 500, 94);
+				getColor(0, 0, 0), fuenteGothic(20), 100, 130, 500, 94);
 
 		JTextField entradaK = createTextField(panelInicial, getColor(250, 250, 210), 600, 130, 350, 50);
 		
 		
 		
 		JLabel cartelEleccion = createJLabel(panelInicial, "Elija algoritmo de distribucion de centros : ",
-				getColor(105, 105, 105), fuenteGothic(20), 100, 350, 500, 94);
+				getColor(0, 0, 0), fuenteGothic(20), 100, 350, 500, 94);
 
-		JButton btnHeuristica1 = createButton(panelInicial, "Ver mapa por promedio", 100, 450, 180, 80);
+		JButton btnHeuristica1 = createButton(panelInicial, "Ver mapa por promedio", 400, 450, 180, 80);
 		btnHeuristica1.addActionListener( e -> {
 			cVent.cambiarAMapa();
 			int k = Integer.parseInt(entradaK.getText().trim());
@@ -81,7 +81,7 @@ public class VentanaInicial extends ModeloVentana {
 		});
 
 		
-		JButton btnFuerzaBruta = createButton(panelInicial, "Ver mapa por fuerza bruta", 400, 450, 200, 80);
+		JButton btnFuerzaBruta = createButton(panelInicial, "Ver mapa por fuerza bruta", 800, 450, 200, 80);
 		btnFuerzaBruta.addActionListener( e -> {
 			cVent.cambiarAMapa();
 			int k = Integer.parseInt(entradaK.getText().trim());

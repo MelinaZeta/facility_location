@@ -13,20 +13,6 @@
         "longitud": -58.716667
       },
       "nombre": "Centro B"
-    },
-    {
-      "ubicacion": {
-        "latitud": -34.466667,
-        "longitud": -58.766667
-      },
-      "nombre": "Centro C"
-    },
-    {
-      "ubicacion": {
-        "latitud": -34.500148,
-        "longitud": -58.681064
-      },
-      "nombre": "Centro D"
     }
   ]
 }
