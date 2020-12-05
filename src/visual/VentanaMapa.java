@@ -52,7 +52,7 @@ public class VentanaMapa extends ModeloVentana {
 
 		_mapa = new JMapViewer();
 		_mapa.setZoomControlsVisible(true);
-		_mapa.setSize(1400, 650);
+		_mapa.setSize(1200, 630);
 
 		Coordinate coordinate = new Coordinate(-34.521, -58.7008);
 		_mapa.setDisplayPosition(coordinate, 10);
@@ -64,11 +64,23 @@ public class VentanaMapa extends ModeloVentana {
 		// JLabel hola = createJLabel(panelMapa, "hola mundo ", Color.black,
 		// fuenteGothic(20), 100, 570, 200, 200);
 
-		JButton btnVolverInicio = createButton(panelMapa, "Volver al Inicio", 90, 670, 150, 50);
+		JButton btnVolverInicio = createButton(panelMapa, "Volver al Inicio", 90, 650, 150, 50);
 		btnVolverInicio.addActionListener(e -> cVent.cambiarAInicial());
 
-		JButton btnEstadisticas = createButton(panelMapa, "Estadisticas", 1050, 670, 150, 50);
+		JButton btnEstadisticas = createButton(panelMapa, "Estadisticas", 1050, 650, 150, 50);
 		btnEstadisticas.addActionListener(e -> cVent.cambiarAEstadisticas());
+		
+		JLabel label_refe = createJLabel(panelMapa, "REFERENCIAS", getColor(0, 0, 0),
+				fuenteSitka(20), 1210, 20, 150, 126);
+		
+		JLabel refe_amarillo = createJLabel(panelMapa, "Clientes", getColor(0, 0, 255),
+				fuenteSitka(16), 1210, 80, 150, 126);
+		
+		JLabel refe_rojo = createJLabel(panelMapa, "Centros elegidos", getColor(255, 255, 0),
+				fuenteSitka(16), 1210, 140, 150, 126);
+		
+		JLabel refe_azul = createJLabel(panelMapa, "Centros no elegidos", getColor(255, 0, 0),
+				fuenteSitka(16), 1210, 200, 150, 126);
 
 		panelMapa.add(_mapa);
 
@@ -109,6 +121,7 @@ public class VentanaMapa extends ModeloVentana {
 			_mapa.addMapPolygon(_poligono);
 		});
 	}
+	
 
 	private void eliminar() {
 		btnEliminar = new JButton("Eliminar Pol�gono");
