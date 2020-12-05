@@ -21,7 +21,7 @@ public class Fondo extends JPanel  {
 	      
 		  	
 					
-	    	imagen = new ImageIcon("Fondos/fondo7.jpg");
+	    	imagen = new ImageIcon("Fondos/fondo8.jpg");
 							
 	   
 	    	

@@ -112,7 +112,6 @@ public class Main {
 
 	public void cambiarAEstadisticas() {
 		ocultarPaneles();
-
 		panelFinal.setEnabled(true);
 		panelFinal.setVisible(true);
 		ControladorEstadisticas.crearEstadisticas(panelEstadisticas);

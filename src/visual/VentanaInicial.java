@@ -60,18 +60,18 @@ public class VentanaInicial extends ModeloVentana {
 		
 		
 
-		JLabel titulo = createJLabel(panelInicial, "Facility Location", getColor(0, 0, 0), fuenteGothic(38), 454,
+		JLabel titulo = createJLabel(panelInicial, "Facility Location", getColor(230, 230, 250), fuenteGothic(38), 454,
 				30, 401, 94);
 
 		JLabel cartelK = createJLabel(panelInicial, "Elija la cantidad de centros que desea abrir : ",
-				getColor(0, 0, 0), fuenteGothic(20), 100, 130, 500, 94);
+				getColor(230, 230, 250), fuenteGothic(24), 100, 130, 600, 94);
 
-		JTextField entradaK = createTextField(panelInicial, getColor(250, 250, 210), 600, 130, 350, 50);
+		JTextField entradaK = createTextField(panelInicial, getColor(230,230,250), 700, 150, 350, 30);
 		
 		
 		
 		JLabel cartelEleccion = createJLabel(panelInicial, "Elija algoritmo de distribucion de centros : ",
-				getColor(0, 0, 0), fuenteGothic(20), 100, 350, 500, 94);
+				getColor(230, 230, 250), fuenteGothic(24), 100, 350, 600, 94);
 
 		JButton btnHeuristica1 = createButton(panelInicial, "Ver mapa por promedio", 400, 450, 180, 80);
 		btnHeuristica1.addActionListener( e -> {

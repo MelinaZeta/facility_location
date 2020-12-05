@@ -40,8 +40,8 @@ public class Estadisticas extends ModeloVentana{
 		
 
 		// Crea los JLABEL
-		createJLabel(panelFinal, "Estadisticas", getColor(0, 0, 0),
-				fuenteGothic(28), 391, 5, 300, 126);
+		createJLabel(panelFinal, "Estadisticas", getColor(230,230,250),
+				fuenteGothic(38), 400, 5, 300, 126);
 
 
 		JButton volver = createButton(panelFinal, "Volver al menu principal", 720,
