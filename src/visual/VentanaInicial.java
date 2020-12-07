@@ -8,13 +8,15 @@ import javax.swing.JLabel;
 import controlador.CambiadorDeVentanas;
 import controlador.ControladorMapa;
 
+import java.awt.Color;
+
 import javax.swing.JButton;
 
 public class VentanaInicial extends ModeloVentana {
 
 	private JPanel panelInicial;
 	private CambiadorDeVentanas cVent;
-
+	
 	/**
 	 * Launch the application.
 	 */
@@ -41,9 +43,15 @@ public class VentanaInicial extends ModeloVentana {
 		JLabel titulo = createJLabel(panelInicial, "Facility Location", getColor(230, 230, 250), fuenteGothic(38), 454,
 				30, 401, 94);
 		
+		//Intento de volver al titulo opaco
+		//titulo.setBackground(getColor(150, 150, 150));
+		//titulo.setOpaque(true);
 
 		JLabel cartelK = createJLabel(panelInicial, "Elija la cantidad de centros que desea abrir : ",
 				getColor(230, 230, 250), fuenteGothic(24), 100, 130, 600, 94);
+
+		JLabel labelDeError = createJLabel(panelInicial, "", Color.RED,
+				fuenteGothic(24), 700, 200, 500, 30);
 
 		JTextField entradaK = createTextField(panelInicial, getColor(230, 230, 250), 700, 150, 350, 30);
 
@@ -52,16 +60,30 @@ public class VentanaInicial extends ModeloVentana {
 
 		JButton btnHeuristica1 = createButton(panelInicial, "Ver mapa por promedio", 400, 450, 180, 80);
 		btnHeuristica1.addActionListener(e -> {
-			cVent.cambiarAMapa();
-			int k = Integer.parseInt(entradaK.getText().trim());
-			ControladorMapa.graficarMapaPorPromedios(k);
+			String error=ControladorMapa.revisarK (entradaK.getText());
+			if(error != "") {
+				labelDeError.setText(error);
+			}else {
+				labelDeError.setText("");
+				int k = Integer.parseInt(entradaK.getText().trim());
+				ControladorMapa.graficarMapaPorPromedios(k);
+				cVent.cambiarAMapa();
+			}
+			
 		});
 
 		JButton btnFuerzaBruta = createButton(panelInicial, "Ver mapa por fuerza bruta", 800, 450, 200, 80);
 		btnFuerzaBruta.addActionListener(e -> {
-			cVent.cambiarAMapa();
-			int k = Integer.parseInt(entradaK.getText().trim());
-			ControladorMapa.graficarMapaPorFuerzaBruta(k);
+			String error=ControladorMapa.revisarK (entradaK.getText());
+			entradaK.removeAll();
+			if(error != "") {
+				labelDeError.setText(error);
+			}else {
+				labelDeError.setText("");
+				int k = Integer.parseInt(entradaK.getText().trim());
+				ControladorMapa.graficarMapaPorFuerzaBruta(k);
+				cVent.cambiarAMapa();
+			}
 		});
 
 	}
