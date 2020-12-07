@@ -40,7 +40,7 @@ public class Estadisticas extends ModeloVentana{
 		
 
 		// Crea los JLABEL
-		createJLabel(panelFinal, "Estadisticas", getColor(230,230,250),
+		createJLabel(panelFinal, "Estadisticas", getColor(240, 230, 140),
 				fuenteGothic(38), 400, 5, 300, 126);
 
 

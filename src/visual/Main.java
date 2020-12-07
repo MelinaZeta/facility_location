@@ -7,6 +7,7 @@ import controlador.CambiadorDeVentanas;
 import controlador.ControladorEstadisticas;
 
 import javax.swing.JPanel;
+import java.awt.Color;
 
 
 public class Main {
@@ -58,17 +59,18 @@ public class Main {
 
 		frame.setVisible(true);
 
-		panelInicial = new Fondo();
+		panelInicial = new Fondo("Fondos/fondo9.jpg", "");
 
-		panelMapa = new Fondo();
+		panelMapa = new Fondo("Fondos/fondo9.jpg", "Fondos/referencias.jpg");
 
-		panelFinal = new Fondo();
+		panelFinal = new Fondo("Fondos/fondo9.jpg", "");
 		
 		panelEstadisticas = new JPanel();
 		panelEstadisticas.setBounds(100,150, 1100, 350);
 		panelEstadisticas.setBorder(null);
 		panelEstadisticas.setLayout(null);
 		panelEstadisticas.setVisible(true);
+		panelEstadisticas.setBackground(Color.pink);
 		
 		
 

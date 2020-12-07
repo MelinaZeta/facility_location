@@ -68,17 +68,6 @@ public class VentanaMapa extends ModeloVentana {
 		JButton btnEstadisticas = createButton(panelMapa, "Estadisticas", 1050, 650, 150, 50);
 		btnEstadisticas.addActionListener(e -> cVent.cambiarAEstadisticas());
 		
-		JLabel label_refe = createJLabel(panelMapa, "REFERENCIAS", getColor(0, 0, 0),
-				fuenteSitka(25), 1160, 20, 200, 126);
-		
-		JLabel refe_verde = createJLabel(panelMapa, " (*) CENTROS ELEGIDOS", getColor(0, 255, 0),
-				fuenteSitka(18), 1160, 80, 200, 126);
-		
-		JLabel refe_rojo = createJLabel(panelMapa, " (*) CENTROS NO ELEGIDOS", getColor(255, 0, 0),
-				fuenteSitka(18), 1160, 140, 220, 126);
-		
-		JLabel refe_azul = createJLabel(panelMapa, " (*) CLIENTES", getColor(0, 0, 255),
-				fuenteSitka(18), 1160, 200, 180, 126);
 
 		panelMapa.add(_mapa);
 
