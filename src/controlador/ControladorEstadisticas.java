@@ -44,10 +44,10 @@ public class ControladorEstadisticas {
 		createJLabel(panelEstadisticas, "Los centros elegidos son :" + ControladorEstadisticas.centrosElegidos(),
 				getColor(0, 0, 0), fuenteGothic(22), 28, 50, 1100, 50);
 
-		createJLabel(panelEstadisticas, "La distancia máxima es : " + ControladorEstadisticas.distanciaMaxima(),
+		createJLabel(panelEstadisticas, "La distancia m\u00e1xima es : " + ControladorEstadisticas.distanciaMaxima(),
 				getColor(0, 0, 0), fuenteGothic(22), 28, 100, 1100, 50);
 
-		createJLabel(panelEstadisticas, "La distancia mínima es : " + ControladorEstadisticas.distanciaMinima(),
+		createJLabel(panelEstadisticas, "La distancia m\u00ednima es : " + ControladorEstadisticas.distanciaMinima(),
 				getColor(0, 0, 0), fuenteGothic(22), 28, 150, 1100, 50);
 
 		createJLabel(panelEstadisticas, "La cantidad de clientes es : " + ControladorEstadisticas.cantidadClientes(),

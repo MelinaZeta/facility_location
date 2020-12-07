@@ -40,6 +40,7 @@ public class VentanaInicial extends ModeloVentana {
 
 		JLabel titulo = createJLabel(panelInicial, "Facility Location", getColor(230, 230, 250), fuenteGothic(38), 454,
 				30, 401, 94);
+		
 
 		JLabel cartelK = createJLabel(panelInicial, "Elija la cantidad de centros que desea abrir : ",
 				getColor(230, 230, 250), fuenteGothic(24), 100, 130, 600, 94);

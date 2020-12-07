@@ -13,6 +13,13 @@
         "longitud": -58.716667
       },
       "nombre": "Centro B"
+    },
+    {
+      "ubicacion": {
+        "latitud": -34.65,
+        "longitud": -58.566667
+      },
+      "nombre": "Centro A"
     }
   ]
 }

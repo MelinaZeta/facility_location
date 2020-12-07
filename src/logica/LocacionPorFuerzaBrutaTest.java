@@ -8,13 +8,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ComparadorPorPromedioTest {
+public class LocacionPorFuerzaBrutaTest {
 	ArrayList<Centro> centros;
 	ArrayList<Cliente> clientes;
 	Centro p1, p2, p3, p4, p5;
 	Cliente c1, c2, c3, c4, c5, c6;
+	LocacionPorFuerzaBruta locacionesPorFuerzaBruta;
 	
-
 	@Before
 	public void setUp() throws Exception {
 		centros = new ArrayList<Centro>();
@@ -43,32 +43,28 @@ public class ComparadorPorPromedioTest {
 		clientes.add(c4);
 		clientes.add(c5);
 
-		ComparadorPorPromedio comparador = new ComparadorPorPromedio(clientes, centros);
+		locacionesPorFuerzaBruta = new LocacionPorFuerzaBruta(clientes, centros);
 	
 	}
-	
+
 	@Test(expected = IllegalArgumentException.class)
 	public void sinCentrosTest() {
-		ComparadorPorPromedio comparador1 = new ComparadorPorPromedio(clientes, centros);
-		comparador1.resolver(0);
+		LocacionPorFuerzaBruta solver = new LocacionPorFuerzaBruta(clientes, centros);
+		solver.resolver(0);
 
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void centrosExcedidosTest() {
-		ComparadorPorPromedio comparador1 = new ComparadorPorPromedio(clientes, centros);
-		comparador1.resolver(centros.size()+1);
+		LocacionPorFuerzaBruta solver = new LocacionPorFuerzaBruta(clientes, centros);
+		solver.resolver(centros.size()+1);
 
 	}
 	
 	@Test
 	public void elegirTodosLosCentrosTest() {
-		ComparadorPorPromedio comparador1 = new ComparadorPorPromedio(clientes, centros);
-		Assert.assertEquals(centros, comparador1.resolver(centros.size()));
+		LocacionPorFuerzaBruta solver = new LocacionPorFuerzaBruta(clientes, centros);
+		Assert.assertEquals(centros, solver.resolver(centros.size()));
 	}
-	
-	
-
-
 
 }

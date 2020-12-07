@@ -16,7 +16,22 @@ public class LocacionPorFuerzaBruta implements Solvers {
 		this.centros = centros;
 	}
 
+	@SuppressWarnings("unchecked")
 	public  ArrayList<Centro> resolver(int k) {
+		
+		if (k > centros.size()) {
+			throw new IllegalArgumentException("no se pueden elegir mas centros de los que hay disponible");
+		}
+		
+		if (k < 1) {
+			throw new IllegalArgumentException("no puede elegir centros negativos");
+		}
+		
+		if (k == centros.size()) {
+			elegidos = (ArrayList<Centro>) centros.clone();
+			centrosCercanosAClientes = calcularCentrosCercanos();
+			return (ArrayList<Centro>) centros.clone();
+		}
 
 		elegidos = new ArrayList<Centro>();
 //

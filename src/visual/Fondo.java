@@ -19,20 +19,14 @@ public class Fondo extends JPanel  {
 	@Override
 	public void paint(Graphics g) {
 	      
-		  	
-					
 	    	imagen = new ImageIcon("Fondos/fondo8.jpg");
 							
-	   
-	    	
 	    	g.drawImage(imagen.getImage(),0,0, 1400,750,null );
 	   
-	    	
-	    	super.paint(g);
 
 	    	setOpaque(false);
-	    	
-	    	
+
+	    	super.paint(g);
 	    	
 	    }
 	    
