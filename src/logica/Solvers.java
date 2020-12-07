@@ -95,7 +95,7 @@ public interface Solvers {
 			}
 		}
 		
-		return redondear(distMaxima) + " entre "+ centroN + " y " + clienteN;
+		return redondear(distMaxima) + " km entre "+ centroN + " y " + clienteN;
 	}
 	
 	default String distMin() {
@@ -114,7 +114,7 @@ public interface Solvers {
 			}
 		}
 		
-		return redondear(distMin) + " entre "+ centroN + " y " + clienteN;
+		return redondear(distMin) + " km entre "+ centroN + " y " + clienteN;
 	}
 	
 	default ArrayList<String> cantClientes () {

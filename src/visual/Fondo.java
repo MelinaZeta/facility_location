@@ -1,13 +1,18 @@
 package visual;
 
 import java.awt.Graphics;
-import java.awt.Image;
+
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 public class Fondo extends JPanel  {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	ImageIcon imagen;
 	ImageIcon imagen2;
 	String nombre;

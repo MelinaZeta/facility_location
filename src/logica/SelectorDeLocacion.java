@@ -17,7 +17,7 @@ public class SelectorDeLocacion {
 		 clientes = GestorJSON.cargarClientesDesdeJSON();
 		 centros = GestorJSON.cargarCentrosDesdeJSON();
 	
-		 ComparadorPorPromedio comp = new ComparadorPorPromedio(clientes , centros);
+		 HeuristicaPromedio comp = new HeuristicaPromedio(clientes , centros);
 		 elegidos= comp.resolver(3);	 
 		 System.out.println("Centros elegidos por promedio (Costo "+ comp.costo()+")\n\n"+elegidos);
 		 

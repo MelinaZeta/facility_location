@@ -2,10 +2,10 @@
   "clientes": [
     {
       "ubicacion": {
-        "latitud": -34.982071,
-        "longitud": -58.376066
+        "latitud": -34.5331,
+        "longitud":  -58.7006
     },
-      "nombre": "Cliente A"
+      "nombre": "Cliente 1"
     },
     
     {
@@ -14,7 +14,7 @@
         "longitud": -58.541667
       
     },
-    	"nombre": "Cliente B"
+    	"nombre": "Cliente 2"
     },
     {
       "ubicacion": {
@@ -22,7 +22,7 @@
         "longitud": -58.766667
     
     },
-    	"nombre": "Cliente C"
+    	"nombre": "Cliente 3"
     	},
     {
       "ubicacion": {
@@ -30,21 +30,42 @@
         "longitud": -58.7
       
     },
-    	"nombre": "Cliente D"
+    	"nombre": "Cliente 4"
     },
      {
       "ubicacion": {
         "latitud":  -34.45, 
         "longitud": -58.65
     },
-    	"nombre": "Cliente E"
+    	"nombre": "Cliente 5"
     },
     {
       "ubicacion": {
-        "latitud":-35.033333,
-        "longitud": -58.733333
+        "latitud":  -34.45, 
+        "longitud": -58.8019
+    },
+    	"nombre": "Cliente 6"
+    },
+    {
+      "ubicacion": {
+        "latitud":  -34.416667, 
+        "longitud": -58.75
+    },
+    	"nombre": "Cliente 7"
+    },
+    {
+      "ubicacion": {
+        "latitud":  -34.59, 
+        "longitud": -58.75
+    },
+    	"nombre": "Cliente 8"
+    },
+    {
+      "ubicacion": {
+        "latitud":-34.5639,
+        "longitud": -58.7611
         },
-        "nombre": "Cliente F"
+        "nombre": "Cliente 9"
     }
   ]
 }

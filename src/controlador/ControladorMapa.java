@@ -1,23 +1,20 @@
 package controlador;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-
 import org.openstreetmap.gui.jmapviewer.JMapViewer;
-
 import datos.GestorJSON;
 import logica.Centro;
 import logica.Cliente;
-import logica.ComparadorPorPromedio;
+import logica.HeuristicaPromedio;
 import logica.LocacionPorFuerzaBruta;
-import logica.ObjetoConCoordenadas;
 import logica.Solvers;
 
 public class ControladorMapa {
+	
 	private static ArrayList<Cliente> clientes = GestorJSON.cargarClientesDesdeJSON();
 	private static ArrayList<Centro> centros = GestorJSON.cargarCentrosDesdeJSON();
-	public static ComparadorPorPromedio solverProm = new ComparadorPorPromedio(clientes, centros);
+	public static HeuristicaPromedio solverProm = new HeuristicaPromedio(clientes, centros);
 	public static LocacionPorFuerzaBruta solverFB = new LocacionPorFuerzaBruta(clientes, centros);
 	public static JMapViewer mapa;
 	public static ArrayList<Centro> elegidos;
@@ -79,16 +76,16 @@ public class ControladorMapa {
 	      int k = Integer.parseInt(entrada.trim());
 	      
 	  	if (k <= 0) {
-			return "no se pueden abrir centros negativos";
+			return "Ingrese numeros positivos";
 		}
 		if (k > centros.size()) {
-			return "usted no tiene tantos centros";
+			return "Supera centros disponibles";
 		}
 		
 	    }
 	    catch (NumberFormatException nfe)
 	    {
-	      return "no escribas pavadas";
+	      return "Ingrese un numero";
 	    }
 	  
 		

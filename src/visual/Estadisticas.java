@@ -1,25 +1,14 @@
 package visual;
 
-import java.awt.Color;
-import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 import controlador.CambiadorDeVentanas;
-import controlador.ControladorMapa;
-import controlador.ControladorEstadisticas;
+
 
 public class Estadisticas extends ModeloVentana{
 
-	public static JPanel panelFinal;
+	public  JPanel panelFinal;
 	private CambiadorDeVentanas cVent;
 	public static JPanel panelEstadisticas;
 	

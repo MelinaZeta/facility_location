@@ -40,14 +40,10 @@ public class VentanaInicial extends ModeloVentana {
 		panelInicial.setBorder(null);
 		panelInicial.setLayout(null);
 
-		JLabel titulo = createJLabel(panelInicial, "Facility Location", getColor(240, 230, 140), fuenteGothic(38), 454,
+		createJLabel(panelInicial, "Facility Location", getColor(240, 230, 140), fuenteGothic(38), 454,
 				30, 401, 94);
 		
-		//Intento de volver al titulo opaco
-		//titulo.setBackground(getColor(150, 150, 150));
-		//titulo.setOpaque(true);
-
-		JLabel cartelK = createJLabel(panelInicial, "Elija la cantidad de centros que desea abrir : ",
+		createJLabel(panelInicial, "Elija la cantidad de centros que desea abrir : ",
 				getColor(240, 230, 140), fuenteGothic(24), 100, 130, 600, 94);
 
 		JLabel labelDeError = createJLabel(panelInicial, "", Color.RED,
@@ -55,7 +51,7 @@ public class VentanaInicial extends ModeloVentana {
 
 		JTextField entradaK = createTextField(panelInicial, getColor(240, 230, 140), 700, 150, 350, 30);
 
-		JLabel cartelEleccion = createJLabel(panelInicial, "Elija algoritmo de distribucion de centros : ",
+		createJLabel(panelInicial, "Elija algoritmo de distribucion de centros : ",
 				getColor(240, 230, 140), fuenteGothic(24), 100, 350, 600, 94);
 
 		JButton btnHeuristica1 = createButton(panelInicial, "Ver mapa por promedio", 400, 450, 180, 80);

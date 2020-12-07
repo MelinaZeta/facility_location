@@ -13,17 +13,18 @@ import java.awt.Color;
 public class Main {
 
 	private JFrame frame;
+	@SuppressWarnings("unused")
 	private VentanaInicial ventanaInicial;
+	@SuppressWarnings("unused")
 	private VentanaMapa ventanaMapa;
+	@SuppressWarnings("unused")
 	private Estadisticas ventanaEstadisticas;
 	private Fondo panelInicial;
 	private Fondo panelMapa;
 	private Fondo panelFinal;
 	private JPanel panelEstadisticas;
 	
-	/**
-	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -37,9 +38,7 @@ public class Main {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
+
 	public Main() {
 
 		initialize();
