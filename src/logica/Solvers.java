@@ -57,7 +57,7 @@ public interface Solvers {
 	}
 
 	default HashMap<Centro, ArrayList<Cliente>> calcularCentrosCercanos() {
-		
+
 		HashMap<Centro, ArrayList<Cliente>> vecinos = new HashMap<Centro, ArrayList<Cliente>>();
 
 		for (Cliente cl : getClientes()) {
@@ -78,9 +78,9 @@ public interface Solvers {
 	default Double costo() {
 		return costo(getElegidos());
 	}
-	
+
 	default String distMaxima() {
-		double distMaxima =  0;
+		double distMaxima = 0;
 		double distActual = 0;
 		String centroN = "";
 		String clienteN = "";
@@ -94,10 +94,10 @@ public interface Solvers {
 				}
 			}
 		}
-		
-		return redondear(distMaxima) + " km entre "+ centroN + " y " + clienteN;
+
+		return redondear(distMaxima) + " km entre " + centroN + " y " + clienteN;
 	}
-	
+
 	default String distMin() {
 		double distMin = Double.POSITIVE_INFINITY;
 		double distActual = 0;
@@ -113,39 +113,39 @@ public interface Solvers {
 				}
 			}
 		}
-		
-		return redondear(distMin) + " km entre "+ centroN + " y " + clienteN;
+
+		return redondear(distMin) + " km entre " + centroN + " y " + clienteN;
 	}
-	
-	default ArrayList<String> cantClientes () {
+
+	default ArrayList<String> cantClientes() {
 		ArrayList<String> cant = new ArrayList<String>();
-		
+
 		for (Centro cn : getVecinos().keySet()) {
 			cant.add(cn.getNombre() + " tiene " + getVecinos().get(cn).size() + " clientes");
 		}
-		
+
 		return cant;
 	}
-	
-	default double promedioDistanciaCliente () {
-		
-		return redondear(costo() / getClientes().size()); 
+
+	default double promedioDistanciaCliente() {
+
+		return redondear(costo() / getClientes().size());
 	}
-	
-	default double promedioDistanciaCentro () {
-		double suma =0 ; 
+
+	default double promedioDistanciaCentro() {
+		double suma = 0;
 		for (Centro cn : getElegidos()) {
-			for ( Centro cn2 : getElegidos()) {
-				suma += cn.distancia(cn2); 
+			for (Centro cn2 : getElegidos()) {
+				suma += cn.distancia(cn2);
 			}
 		}
 		suma = suma / 2;
-		return redondear (suma / getElegidos().size()); 
+		return redondear(suma / getElegidos().size());
 	}
-	
-	default double redondear (double dob) {
-		return  Math.floor(dob * 100)/100;
-		
+
+	default double redondear(double dob) {
+		return Math.floor(dob * 100) / 100;
+
 	}
-	
+
 }

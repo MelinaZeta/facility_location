@@ -11,12 +11,10 @@ public class HeuristicaPromedio implements Solvers {
 	private ArrayList<Centro> elegidos;
 	private HashMap<Centro, ArrayList<Cliente>> centrosCercanosAClientes;
 
-
-	
 	public HeuristicaPromedio(ArrayList<Cliente> clientes, ArrayList<Centro> centros) {
 		this.clientes = clientes;
 		this.centros = centros;
-		
+
 	}
 
 	@SuppressWarnings("unchecked")
@@ -24,22 +22,22 @@ public class HeuristicaPromedio implements Solvers {
 		ArrayList<Double> promedios = promedio();
 		ArrayList<Centro> centrosRet = new ArrayList<Centro>();
 		this.centrosClonados = (ArrayList<Centro>) centros.clone();
-		int indiceMin =0;
+		int indiceMin = 0;
 
 		if (k > centros.size()) {
 			throw new IllegalArgumentException("no se pueden elegir mas centros de los que hay disponible");
 		}
-		
+
 		if (k < 1) {
 			throw new IllegalArgumentException("no puede elegir centros negativos");
 		}
-		
+
 		if (k == centros.size()) {
 			elegidos = (ArrayList<Centro>) centros.clone();
 			centrosCercanosAClientes = calcularCentrosCercanos();
 			return (ArrayList<Centro>) centros.clone();
 		}
-		
+
 		for (int i = 0; i < k; i++) {
 			indiceMin = dameIndiceMenor(promedios);
 			centrosRet.add(centrosClonados.get(indiceMin));
@@ -47,16 +45,15 @@ public class HeuristicaPromedio implements Solvers {
 			promedios.remove(indiceMin);
 		}
 		elegidos = centrosRet;
-		
+
 		centrosCercanosAClientes = calcularCentrosCercanos();
-		
+
 		return centrosRet;
 	}
-	
-	
-	private int dameIndiceMenor (ArrayList <Double> promedios) {
+
+	private int dameIndiceMenor(ArrayList<Double> promedios) {
 		int indiceMin = 0;
-		
+
 		for (int i = 0; i < promedios.size(); i++) {
 			if (promedios.get(indiceMin) > promedios.get(i)) {
 				indiceMin = i;
@@ -64,6 +61,7 @@ public class HeuristicaPromedio implements Solvers {
 		}
 		return indiceMin;
 	}
+
 	private ArrayList<Double> promedio() {
 		ArrayList<Double> promedios = new ArrayList<Double>();
 		double sumaDistancia = 0;
@@ -79,7 +77,6 @@ public class HeuristicaPromedio implements Solvers {
 
 	}
 
-	
 	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Cliente> getClientes() {
@@ -91,7 +88,6 @@ public class HeuristicaPromedio implements Solvers {
 	public ArrayList<Centro> getElegidos() {
 		return (ArrayList<Centro>) elegidos.clone();
 	}
-
 
 	@SuppressWarnings("unchecked")
 	@Override

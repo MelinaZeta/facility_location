@@ -29,12 +29,6 @@ public class Ubicacion {
 		double seno = Math.pow(Math.sin(angulo / 2), 2);
 		return seno;
 	}
-	
-	public static void main (String [] args) {
-		Ubicacion poloNorte = new Ubicacion (90,0);
-		Ubicacion poloSur = new Ubicacion (-90,0);
-		System.out.println(poloNorte.distancia(poloSur));
-	}
 
 	@Override
 	public String toString() {
