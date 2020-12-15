@@ -14,7 +14,6 @@ public interface Solvers {
 	public HashMap<Centro, ArrayList<Cliente>> getVecinos();
 
 	default Double costo(ArrayList<Centro> centrosActual) {
-		{
 			if (centrosActual == null || centrosActual.size() < 1) {
 				return Double.POSITIVE_INFINITY;
 			}
@@ -37,7 +36,6 @@ public interface Solvers {
 				suma += d;
 			}
 			return redondear(suma);
-		}
 	}
 
 	default Centro centroMasCercano(Cliente c) {
